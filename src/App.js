@@ -1,8 +1,7 @@
-
-import './App.css';
-import NewWordForm from './components/NewWordForm';
+import "./App.css";
+import NewWordForm from "./components/NewWordForm";
 import { useState, useEffect } from "react";
-import axios from 'axios';
+import axios from "axios";
 // import Word from "./components/Word.js"
 
 function App() {
@@ -12,14 +11,14 @@ function App() {
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         // const newWords = [...wordsList];
         // const newWordJSON = {
         //   ...newWordInfo,
         //   id: response.data.word.id,
         // };
         // newWords.push(newWordJSON);
-        // setWordsList(newWords);
+        setWordsString(newWordInfo);
       })
       .catch((error) => {
         console.log(error);
@@ -30,7 +29,6 @@ function App() {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
       .then((response) => {
-
         setWordsString(response.data);
       })
       .catch((error) => {
@@ -38,15 +36,14 @@ function App() {
       });
   }, []);
 
-
   return (
     <div>
       <header>
         <h1>Feeling Well</h1>
       </header>
-      
+
       <aside>
-      <NewWordForm createNewWordForm={addWord} />
+        <NewWordForm createNewWordForm={addWord} />
       </aside>
       <main>{wordsString}</main>
     </div>
