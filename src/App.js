@@ -2,6 +2,7 @@ import "./App.css";
 import NewWordForm from "./components/NewWordForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import WordCloud from "./components/wordCloud";
 
 function App() {
   const [wordsString, setWordsString] = useState("");
@@ -40,6 +41,9 @@ function App() {
 
       <aside>
         <NewWordForm createNewWordForm={addWord} />
+      </aside>
+      <aside>
+        <WordCloud />
       </aside>
       <main>
         <div>{wordsString}</div>
