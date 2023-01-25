@@ -22,7 +22,7 @@ const NewWordForm = ({createNewWordForm}) =>{
     createNewWordForm(formData);
 
     setFormData({
-      message: ''
+      description: ''
     }); 
 
   };

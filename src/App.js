@@ -2,7 +2,6 @@ import "./App.css";
 import NewWordForm from "./components/NewWordForm";
 import { useState, useEffect } from "react";
 import axios from "axios";
-// import Word from "./components/Word.js"
 
 function App() {
   const [wordsString, setWordsString] = useState("");
@@ -14,15 +13,6 @@ function App() {
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
       .then((response) => {
         console.log(response.data);
-        console.log("click");
-        // const newWords = [...wordsString];
-        const newWords = [...wordsString];
-        // const newWordJSON = {
-        //   ...newWordInfo,
-        // id: response.data.word.id,
-        // };
-        newWords.push(wordsString);
-        setWordsString(newWords);
       })
       .catch((error) => {
         console.log(error);
