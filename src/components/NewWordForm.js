@@ -13,6 +13,7 @@ const NewWordForm = ({createNewWordForm}) =>{
       [event.target.name]: event.target.value,
     };
     setFormData(newFormData);
+    console.log(event.target.value)
 
   };
 
@@ -38,7 +39,7 @@ const NewWordForm = ({createNewWordForm}) =>{
           type='text'
           id='word'
           name='word'
-          value={formData.description}
+          value={formData.word} //we had formData.description hence the form did not render what we type on scree
           onChange={handleChange}
         />
       </div>
