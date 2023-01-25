@@ -19,7 +19,7 @@ function App() {
       });
   };
 
-  useEffect(() => {
+  const getWords = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
       .then((response) => {
@@ -28,7 +28,9 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }
+
+  useEffect(getWords, []);
 
   return (
     <div>
@@ -39,7 +41,10 @@ function App() {
       <aside>
         <NewWordForm createNewWordForm={addWord} />
       </aside>
-      <main>{wordsString}</main>
+      <main>
+        <div>{wordsString}</div>
+        <button onClick={()=>getWords()}>Generate WordCloud</button>
+      </main>
     </div>
   );
 }
