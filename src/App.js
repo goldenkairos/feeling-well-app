@@ -7,19 +7,6 @@ import axios from "axios";
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
 
-  const addWord = (newWordInfo) => {
-    console.log('addWord is called here')
-    
-    axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
   const getWords = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
@@ -30,6 +17,20 @@ function App() {
         console.log(error);
       });
   }
+
+  const addWord = (newWordInfo) => {
+    console.log('addWord is called here')
+    
+    axios
+      .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
+      .then((response) => {
+        console.log(response.data);
+        getWords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(getWords, []);
 

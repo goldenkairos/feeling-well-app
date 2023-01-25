@@ -44,7 +44,7 @@ const NewWordForm = ({createNewWordForm, getWords}) =>{
         />
       </div>
 
-      <button type="submit" value="Submit" onClick={()=>getWords()}>Submit</button>
+      <button type="submit" value="Submit">Submit</button>
     </form>
   );
 };
