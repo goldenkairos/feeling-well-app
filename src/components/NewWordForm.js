@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-const NewWordForm = ({createNewWordForm, getWords}) =>{
+const NewWordForm = ({createNewWordForm}) =>{
 
   const [formData, setFormData] = useState({
     description: ''

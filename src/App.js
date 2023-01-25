@@ -43,7 +43,7 @@ function App() {
       <aside>
         <NewWordForm 
         createNewWordForm={addWord}
-        getWords={getWords} />
+        />
       </aside>
       <main>
         <div>
