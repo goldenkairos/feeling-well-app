@@ -1,10 +1,11 @@
 import "./App.css";
 import NewWordForm from "./components/NewWordForm";
+import WordCloud from "./components/wordCloud";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [wordsString, setWordsString] = useState("");
+  const [wordsFreq, setWordsFreq] = useState({});
 
   const addWord = (newWordInfo) => {
     console.log('addWord is called here')
@@ -23,7 +24,7 @@ function App() {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
       .then((response) => {
-        setWordsString(response.data);
+        setWordsFreq(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -42,7 +43,9 @@ function App() {
         <NewWordForm createNewWordForm={addWord} />
       </aside>
       <main>
-        <div>{wordsString}</div>
+        <div>
+        <WordCloud wordsFreq={wordsFreq}/>
+        </div>
         <button onClick={()=>getWords()}>Generate WordCloud</button>
       </main>
     </div>
