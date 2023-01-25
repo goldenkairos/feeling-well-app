@@ -40,13 +40,14 @@ function App() {
       </header>
 
       <aside>
-        <NewWordForm createNewWordForm={addWord} />
+        <NewWordForm 
+        createNewWordForm={addWord}
+        getWords={getWords} />
       </aside>
       <main>
         <div>
         <WordCloud wordsFreq={wordsFreq}/>
         </div>
-        <button onClick={()=>getWords()}>Generate WordCloud</button>
       </main>
     </div>
   );

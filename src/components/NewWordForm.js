@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-const NewWordForm = ({createNewWordForm}) =>{
+const NewWordForm = ({createNewWordForm, getWords}) =>{
 
   const [formData, setFormData] = useState({
     description: ''
@@ -44,7 +44,7 @@ const NewWordForm = ({createNewWordForm}) =>{
         />
       </div>
 
-      <input type="submit" value="Submit"></input>
+      <button type="submit" value="Submit" onClick={()=>getWords()}>Submit</button>
     </form>
   );
 };
