@@ -3,6 +3,7 @@ import NewWordForm from "./components/NewWordForm";
 import WordCloud from "./components/wordCloud";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import WordList from "./components/WordList";
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
@@ -41,6 +42,8 @@ function App() {
       </header>
 
       <aside>
+        <div><WordList submitNewWord={addWord} /></div>
+
         <NewWordForm 
         createNewWordForm={addWord}
         />
