@@ -8,17 +8,21 @@ function App() {
   const [wordsString, setWordsString] = useState("");
 
   const addWord = (newWordInfo) => {
+    console.log('addWord is called here')
+    
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
       .then((response) => {
         console.log(response.data);
-        // const newWords = [...wordsList];
+        console.log("click");
+        // const newWords = [...wordsString];
+        const newWords = [...wordsString];
         // const newWordJSON = {
         //   ...newWordInfo,
-        //   id: response.data.word.id,
+        // id: response.data.word.id,
         // };
-        // newWords.push(newWordJSON);
-        setWordsString(newWordInfo);
+        newWords.push(wordsString);
+        setWordsString(newWords);
       })
       .catch((error) => {
         console.log(error);
