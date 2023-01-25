@@ -33,11 +33,11 @@ const NewWordForm = ({createNewWordForm}) =>{
         <h1>
           ☀️How are you feeling today?☀️
         </h1>
-        <label htmlFor='word'>Word: </label>
+        <label htmlFor='description'>Word: </label>
         <input
           type='text'
-          id='word'
-          name='word'
+          id='description'
+          name='description'
           value={formData.description}
           onChange={handleChange}
         />
