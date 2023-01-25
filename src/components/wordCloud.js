@@ -13,7 +13,7 @@ function WordCloud({ wordsFreq }) {
 
 
   return (
-    <div style={{ height: 200, width: 600 }}>
+    <div style={{ height: 400, width: 600 }}>
       <ReactWordcloud
         words={word2}
         options={{
