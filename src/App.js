@@ -40,7 +40,9 @@ function App() {
       <header>
         <h1>Feeling Well</h1>
       </header>
-
+      <h2>
+      😌Hello there, how are you today?☀️
+        </h2>
       <aside>
         <div><WordList submitNewWord={addWord} /></div>
 

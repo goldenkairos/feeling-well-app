@@ -31,10 +31,8 @@ const NewWordForm = ({createNewWordForm}) =>{
     
     <form onSubmit={handleNewWordSubmit}>
       <div>
-        <h1>
-          ☀️How are you feeling today?☀️
-        </h1>
-        <label htmlFor='description'>Word: </label>
+      <p></p>
+        <label htmlFor='description'> Tell us how you feel in one word: </label>
         <input
           type='text'
           id='description'
