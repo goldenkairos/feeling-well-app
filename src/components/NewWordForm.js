@@ -30,10 +30,10 @@ const NewWordForm = ({createNewWordForm}) =>{
   return (
     
     <form onSubmit={handleNewWordSubmit}>
-      <div>
+      <div className='submitField'>
       <p></p>
-        <label htmlFor='description'> Tell us how you feel in one word: </label>
-        <input
+        <label htmlFor='description' > Tell us how you feel in one word: </label>
+        <input className="inputfield"
           type='text'
           id='description'
           name='description'
@@ -42,7 +42,7 @@ const NewWordForm = ({createNewWordForm}) =>{
         />
       </div>
 
-      <button type="submit" value="Submit">Submit</button>
+      <button className="submitButton" type="submit" value="Submit">Submit</button>
     </form>
   );
 };
