@@ -21,6 +21,7 @@ function App() {
 
   const addWord = (newWordInfo) => {
     console.log('Happy New Year!')
+    console.log('We made huge progress today')
     
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
