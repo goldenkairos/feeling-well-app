@@ -1,9 +1,11 @@
 import "./App.css";
-import NewWordForm from "./components/NewWordForm";
-import WordCloud from "./components/wordCloud";
+import NewWordForm from "./components/NewWordForm.js";
+import WordCloud from "./components/wordCloud.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import WordList from "./components/WordList";
+import WordList from "./components/WordList.js";
+import FeelingWheel from "./FeelingWheel.js"
+
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
@@ -53,6 +55,9 @@ function App() {
       <main>
         <div>
         <WordCloud wordsFreq={wordsFreq}/>
+        </div>
+        <div>
+          <FeelingWheel />
         </div>
       </main>
     </div>

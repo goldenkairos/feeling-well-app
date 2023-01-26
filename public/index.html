@@ -28,7 +28,18 @@
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <div id="root">
+      <script type="module">
+
+        import define from "./index.js";
+        import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+        
+        const runtime = new Runtime();
+        const main = runtime.module(define, Inspector.into(document.body));
+        
+        </script>
+
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
