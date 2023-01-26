@@ -6,13 +6,13 @@ const wordList = ["Happy", "Grateful", "Excited", "Content", "Confident", "Fear"
 const WordList = ({submitNewWord}) => {
   const wordsComponent = wordList.map((word) => {
     return (
-      <div className='feeling' onClick={()=>submitNewWord({"description":word})}>{word}</div>
+      <button className='feeling' onClick={()=>submitNewWord({"description":word})}>{word}</button>
     )
   })
 
 
   return (
-    <div>{wordsComponent}</div>  
+    <div className="container">{wordsComponent}</div>  
   )
 }
 

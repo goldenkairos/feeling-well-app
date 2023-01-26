@@ -36,3 +36,26 @@
     transform: rotate(360deg);
   }
 }
+
+.feeling {
+  border: #616263;
+  border-radius: 5px;
+  font-size: .8rem;
+  font:bold;
+  border-style:solid;  
+  background-color: #a7eff3;
+  opacity: .8;
+  margin: 5px;
+  width: 70px;
+  align-content: center;
+
+}
+
+.feeling:hover {
+  background-color: aqua;
+  color: black;
+}
+
+/* .container {
+  display:grid
+} */
