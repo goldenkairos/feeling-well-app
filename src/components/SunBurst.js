@@ -12,7 +12,6 @@ import { select as d3Select } from 'd3-selection';
 const Sunburst = ({
   width = 600,
   centerCircleRadius = 25,
-  onSelect,
   shouldReset,
   onReset,
 }) => {
@@ -96,7 +95,7 @@ const Sunburst = ({
   useEffect(() => {
     const svg = d3Select(svgRef.current)
       .append('svg')
-      .style('width', '100vw')
+      .style('width', '40vw')
       .style('height', '80vh')
       .attr('viewBox', [0, 0, width, width])
       .style('font', '10px sans-serif');
@@ -190,14 +189,6 @@ const Sunburst = ({
 
     parentLabelRef.current = parentLabel;
   });
-
-  useEffect(() => {
-    if (shouldReset) {
-      // mock clicking the root node to reuse animation logic
-     
-      onReset();
-    }
-  }, [shouldReset, onReset]);
 
   return <main ref={svgRef}></main>;
 };
