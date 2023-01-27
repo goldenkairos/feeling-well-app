@@ -12,15 +12,13 @@ import { select as d3Select } from 'd3-selection';
 const Sunburst = ({
   width = 600,
   centerCircleRadius = 25,
-  shouldReset,
-  onReset,
 }) => {
   const svgRef = useRef(null);
   const gRef = useRef(null);
   const pathRef = useRef(null);
   const labelRef = useRef(null);
   const parentRef = useRef(null);
-  const parentLabelRef = useRef(null);
+
 
   const chartRadius = useMemo(() => width / 3, [width]);
 
@@ -177,17 +175,6 @@ const Sunburst = ({
 
     parentRef.current = parent;
 
-    const parentLabel = gRef.current
-      .append('text')
-      .datum(root)
-      .attr('pointer-events', 'none')
-      .attr('text-anchor', 'middle')
-      .style('user-select', 'none')
-      .join('text')
-      .attr('dy', '0.35em')
-      .text((d) => d.data.name);
-
-    parentLabelRef.current = parentLabel;
   });
 
   return <main ref={svgRef}></main>;
@@ -196,9 +183,6 @@ const Sunburst = ({
 Sunburst.propTypes = {
   width: PropTypes.number,
   centerCircleRadius: PropTypes.number,
-  onSelect: PropTypes.func.isRequired,
-  shouldReset: PropTypes.bool.isRequired,
-  onReset: PropTypes.func.isRequired,
 };
 
 export default Sunburst;
