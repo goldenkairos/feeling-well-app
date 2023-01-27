@@ -258,10 +258,14 @@ const Sunburst = ({
     const feMerge = filter.append('feMerge');
     feMerge.append('feMergeNode').attr('in', 'coloredBlur');
     feMerge.append('feMergeNode').attr('in', 'SourceGraphic');
+    
+    console.log("render")
 
     return () => {
       d3Select(svg).remove();
+      console.log("clean up code")
     };
+
   }, [width]);
 
   useEffect(() => {
@@ -326,11 +330,6 @@ const Sunburst = ({
       .text((d) => d.data.name);
 
     parentLabelRef.current = parentLabel;
-
-    return () => {
-      d3Select(this).remove();
-    };
-  
   }, [
     gRef,
     arc,

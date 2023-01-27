@@ -1,3 +1,4 @@
+import React from "react";
 import "./App.css";
 import NewWordForm from "./components/NewWordForm.js";
 import WordCloud from "./components/wordCloud.js";
@@ -39,25 +40,32 @@ function App() {
 
   return (
     <div>
-      <header>
-        <h1>Feeling Well</h1>
-      </header>
-      <h2>
-      😌Hello there, how are you today?☀️
-        </h2>
-      <aside>
-        <div><WordList submitNewWord={addWord} /></div>
-        <div><Sunburst /></div>
+      <React.StrictMode>
+        <header>
+          <h1>Feeling Well</h1>
+        </header>
+        <h2>
+        😌Hello there, how are you today?☀️
+          </h2>
+        <aside>
+          <div><WordList submitNewWord={addWord} /></div>
+          </aside>
+      </React.StrictMode>
 
-        <NewWordForm 
-        createNewWordForm={addWord}
-        />
-      </aside>
-      <main>
-        <div>
-        <WordCloud wordsFreq={wordsFreq}/>
-        </div>
-      </main>
+        <div><Sunburst /></div>
+      
+      <React.StrictMode>
+        <aside>
+          <NewWordForm 
+          createNewWordForm={addWord}
+          />
+        </aside>
+        <main>
+          <div>
+          <WordCloud wordsFreq={wordsFreq}/>
+          </div>
+        </main>
+      </React.StrictMode>
     </div>
   );
 }
