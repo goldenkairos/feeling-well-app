@@ -1,9 +1,10 @@
 import "./App.css";
-import NewWordForm from "./components/NewWordForm";
-import WordCloud from "./components/wordCloud";
+import NewWordForm from "./components/NewWordForm.js";
+import WordCloud from "./components/wordCloud.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import WordList from "./components/WordList";
+import WordList from "./components/WordList.js";
+import Sunburst from "./components/SunBurst.js";
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
@@ -45,6 +46,7 @@ function App() {
         </h2>
       <aside>
         <div><WordList submitNewWord={addWord} /></div>
+        <div><Sunburst /></div>
 
         <NewWordForm 
         createNewWordForm={addWord}
