@@ -17,10 +17,11 @@ function WordCloud({ wordsFreq }) {
       <ReactWordcloud
         words={word2}
         options={{
-          fontSizes: [50,100],
+          fontSizes: [40,100],
           rotations: [0,90],
           rotationAngles:[-90,0,90],
-          enableOptimizations: true,
+          // enableOptimizations: true,
+          // deterministic:true,////change the position of the word each render
           
         }}
       />

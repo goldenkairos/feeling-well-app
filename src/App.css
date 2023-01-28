@@ -59,3 +59,29 @@
 /* .container {
   display:grid
 } */
+
+/* Updating the input field  */
+.inputfield {
+  border:none; /*removing the button box */
+  border-bottom: 2px solid black;
+  outline:none; /*removing the outline box */
+}
+
+/* moving the submit button to the right of the form */
+.submitButton {
+  float: center;
+  margin-left: .5rem;
+  border-radius: 5px;
+
+}
+.submitButton:hover{
+  background-color: rgb(122, 232, 151);
+  border-radius: 5px;
+  color: rgb(14, 106, 39);
+}
+
+/* keeping the form and submit button inline */
+.submitField {
+  display: inline-block;
+  /* align-items: center; */
+}

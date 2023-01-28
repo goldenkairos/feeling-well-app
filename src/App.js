@@ -1,12 +1,21 @@
+import React from "react";
 import "./App.css";
-import NewWordForm from "./components/NewWordForm";
-import WordCloud from "./components/wordCloud";
+import NewWordForm from "./components/NewWordForm.js";
+import WordCloud from "./components/wordCloud.js";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import WordList from "./components/WordList";
+import WordList from "./components/WordList.js";
+import Sunburst from "./components/SunBurst.js";
+import RemoveWordForm from "./components/RemoveWordForm.js";
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
+  // const [selected, setSelected] = useState(null);
+
+  // const onClickSelect = () => {
+  //   setSelected("word")
+  // }
+
 
   const getWords = () => {
     axios
@@ -22,6 +31,8 @@ function App() {
   const addWord = (newWordInfo) => {
     console.log('Happy New Year!')
     console.log('We made huge progress today')
+    console.log('addWord is called here')
+    console.log('Happy new Year!')
     
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
@@ -34,26 +45,53 @@ function App() {
       });
   };
 
+  const submitDeleteWord = (deleteWordInfo) => {
+    axios
+    .delete(`${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`)
+    .then((response) => {
+      console.log(response.data);
+      getWords();
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  };
+
   useEffect(getWords, []);
 
   return (
     <div>
-      <header>
-        <h1>Feeling Well</h1>
-      </header>
+      <React.StrictMode>
+        <header>
+          <h1>Feeling Well</h1>
+        </header>
+        <h2>
+        😌Hello there, how are you today?☀️
+          </h2>
+        <aside>
+          <div><WordList submitNewWord={addWord} /></div>
+          </aside>
+      </React.StrictMode>
 
-      <aside>
-        <div><WordList submitNewWord={addWord} /></div>
-
-        <NewWordForm 
-        createNewWordForm={addWord}
-        />
-      </aside>
-      <main>
-        <div>
-        <WordCloud wordsFreq={wordsFreq}/>
-        </div>
-      </main>
+        <div><Sunburst /></div>
+      
+      <React.StrictMode>
+        <aside>
+          <NewWordForm 
+          createNewWordForm={addWord}
+          />
+        </aside>
+        <aside>
+          <RemoveWordForm 
+          submitDeleteWord={submitDeleteWord}
+          />
+        </aside>
+        <main>
+          <div>
+          <WordCloud wordsFreq={wordsFreq}/>
+          </div>
+        </main>
+      </React.StrictMode>
     </div>
   );
 }

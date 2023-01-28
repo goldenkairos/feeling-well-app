@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 
-const NewWordForm = ({createNewWordForm}) =>{
+const RemoveWordForm = ({submitDeleteWord}) =>{
 
   const [formData, setFormData] = useState({
     description: ''
@@ -17,9 +17,9 @@ const NewWordForm = ({createNewWordForm}) =>{
 
   };
 
-  const handleNewWordSubmit = (e) => {
+  const handleDeletedWordSubmit = (e) => {
     e.preventDefault();
-    createNewWordForm(formData);
+    submitDeleteWord(formData.description);
 
     setFormData({
       description: ''
@@ -29,10 +29,10 @@ const NewWordForm = ({createNewWordForm}) =>{
 
   return (
     
-    <form onSubmit={handleNewWordSubmit}>
+    <form onSubmit={handleDeletedWordSubmit}>
       <div className='submitField'>
       <p></p>
-        <label htmlFor='description' > Tell us how you feel in one word: </label>
+        <label htmlFor='description' > Remove a word: </label>
         <input className="inputfield"
           type='text'
           id='description'
@@ -42,9 +42,9 @@ const NewWordForm = ({createNewWordForm}) =>{
         />
       </div>
 
-      <button className="submitButton" type="submit" value="Submit">Submit</button>
+      <button className="deleteButton">Delete</button>
     </form>
   );
 };
 
-export default NewWordForm;
+export default RemoveWordForm;
