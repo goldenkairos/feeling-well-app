@@ -16,7 +16,6 @@ function App() {
   //   setSelected("word")
   // }
 
-
   const getWords = () => {
     axios
       .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
@@ -26,14 +25,14 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   const addWord = (newWordInfo) => {
-    console.log('Happy New Year!')
-    console.log('We made huge progress today')
-    console.log('addWord is called here')
-    console.log('Happy new Year!')
-    
+    console.log("Happy New Year!");
+    console.log("We made huge progress today");
+    console.log("addWord is called here");
+    console.log("Happy new Year!");
+
     axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
       .then((response) => {
@@ -47,14 +46,14 @@ function App() {
 
   const submitDeleteWord = (deleteWordInfo) => {
     axios
-    .delete(`${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`)
-    .then((response) => {
-      console.log(response.data);
-      getWords();
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+      .delete(`${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`)
+      .then((response) => {
+        console.log(response.data);
+        getWords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(getWords, []);
@@ -65,33 +64,35 @@ function App() {
         <header>
           <h1>Feeling Well</h1>
         </header>
-        <h2>
-        😌Hello there, how are you today?☀️
-          </h2>
-        <aside>
-          <div><WordList submitNewWord={addWord} /></div>
+        <h2>😌Hello there, how are you today?☀️</h2>
+      </React.StrictMode>
+      <section className='visualization'>
+        <React.StrictMode>        
+          <aside className='wordTable'>
+            <div>
+              <WordList submitNewWord={addWord} />
+            </div>
           </aside>
-      </React.StrictMode>
-
-        <div><Sunburst /></div>
-      
-      <React.StrictMode>
-        <aside>
-          <NewWordForm 
-          createNewWordForm={addWord}
-          />
-        </aside>
-        <aside>
-          <RemoveWordForm 
-          submitDeleteWord={submitDeleteWord}
-          />
-        </aside>
-        <main>
-          <div>
-          <WordCloud wordsFreq={wordsFreq}/>
+        </React.StrictMode>
+        <div className='feelWheel'>
+          <Sunburst />
+        </div>
+        <React.StrictMode>
+        <div className='forms'>
+          <aside>
+            <NewWordForm createNewWordForm={addWord} />
+          </aside>
+          <aside>
+            <RemoveWordForm submitDeleteWord={submitDeleteWord} />
+          </aside>
           </div>
-        </main>
-      </React.StrictMode>
+          <main>
+            <div className='wordCloud'>
+              <WordCloud wordsFreq={wordsFreq} />
+            </div>
+          </main>
+        </React.StrictMode>
+      </section>
     </div>
   );
 }
