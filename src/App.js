@@ -6,9 +6,16 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import WordList from "./components/WordList.js";
 import Sunburst from "./components/SunBurst.js";
+import RemoveWordForm from "./components/RemoveWordForm.js";
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
+  // const [selected, setSelected] = useState(null);
+
+  // const onClickSelect = () => {
+  //   setSelected("word")
+  // }
+
 
   const getWords = () => {
     axios
@@ -36,6 +43,18 @@ function App() {
       });
   };
 
+  const submitDeleteWord = (deleteWordInfo) => {
+    axios
+    .delete(`${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`)
+    .then((response) => {
+      console.log(response.data);
+      getWords();
+    })
+    .catch((error) => {
+      console.log(error)
+    })
+  };
+
   useEffect(getWords, []);
 
   return (
@@ -58,6 +77,11 @@ function App() {
         <aside>
           <NewWordForm 
           createNewWordForm={addWord}
+          />
+        </aside>
+        <aside>
+          <RemoveWordForm 
+          submitDeleteWord={submitDeleteWord}
           />
         </aside>
         <main>

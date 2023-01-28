@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import jsonData from '../static/icons/emotions.json';
 
@@ -8,6 +8,8 @@ import { quantize, interpolate } from 'd3-interpolate';
 import { interpolateRainbow } from 'd3-scale-chromatic';
 import { arc as d3Arc } from 'd3-shape';
 import { select as d3Select } from 'd3-selection';
+import { text } from 'd3';
+
 
 // import { transition } from 'd3-transition';
 
@@ -135,6 +137,7 @@ const Sunburst = ({
     (p) => {
       onSelect(
         p.parent ? { data: getHierarchy(p), color: parentColor(p) } : null
+        
       );
 
       parentRef.current.datum(p.parent || root);
@@ -206,6 +209,7 @@ const Sunburst = ({
         .transition(t)
         .attr('fill-opacity', (d) => +labelVisible(d.target))
         .attrTween('transform', (d) => () => labelTransform(d.current));
+
     },
     [
       parentRef,
@@ -304,8 +308,10 @@ const Sunburst = ({
       .attr('fill-opacity', (d) => opacity(d.current))
       .attr('transform', (d) => labelTransform(d.current))
       .text((d) => d.data.name);
+      
 
     labelRef.current = label;
+
 
     const parent = gRef.current
       .append('circle')
@@ -341,6 +347,13 @@ const Sunburst = ({
     parentColor,
   ]);
 
+// const [currentLabel, setCurrentLabel] = useState(null);
+
+// const clickLabel = (e) => {
+//   console.log(labelRef.current)
+// };
+
+
   useEffect(() => {
     if (shouldReset) {
       // mock clicking the root node to reuse animation logic
@@ -362,7 +375,7 @@ const Sunburst = ({
 Sunburst.propTypes = {
   width: PropTypes.number,
   centerCircleRadius: PropTypes.number,
-  onSelect: PropTypes.func.isRequired,
+  // onSelect: PropTypes.func.isRequired,
   shouldReset: PropTypes.bool.isRequired,
   onReset: PropTypes.func.isRequired,
 };
@@ -370,3 +383,11 @@ Sunburst.propTypes = {
 export default Sunburst;
 
 //comment to test git push
+
+
+// //set state
+// const [currentLabel, setCurrentLabel] = useState(null)
+
+// const clickEmotion =() =>{
+//   //when user click the label, we will take the current label => setCurrentLabel = labelRef.current = label;
+// }
