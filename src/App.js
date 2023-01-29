@@ -8,7 +8,6 @@ import WordList from "./components/WordList.js";
 import Sunburst from "./components/SunBurst.js";
 import RemoveWordForm from "./components/RemoveWordForm.js";
 
-
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
   // const [selected, setSelected] = useState(null);
@@ -76,7 +75,7 @@ function App() {
           </aside>
         </React.StrictMode>
         <div className='feelWheel'>
-          <Sunburst />
+          <Sunburst clickSubmitNewWord={addWord}/>
         </div>
         <React.StrictMode>
         <div className='forms'>
