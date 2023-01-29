@@ -292,7 +292,7 @@ const Sunburst = ({
       .on('mouseover', handleMouseOver)
       .on('mouseout', handleMouseOut)
       .on('click', clicked)
-      .attr('elementName',(d) => d.data.name); //adding to show the name of the label
+      .attr('label',(d) => d.data.name); //adding to show the name of the label
 
     path.append('title').text((d) => d.data.name);
 
@@ -371,9 +371,9 @@ const Sunburst = ({
   //   }
   // }, [clicked, shouldReset, onReset]);
 
-  const currentLabel = () => { return pathRef.current;
+  // const currentLabel = () => { return pathRef.current.data.name;
 
-  };
+  // };
 
   return (<div>
   <main ref={svgRef}>

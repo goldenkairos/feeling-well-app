@@ -7,7 +7,7 @@ import axios from "axios";
 import WordList from "./components/WordList.js";
 import Sunburst from "./components/SunBurst.js";
 import RemoveWordForm from "./components/RemoveWordForm.js";
-import EmotionLabel from "./components/EmotionLabel.js";
+
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
@@ -92,7 +92,6 @@ function App() {
               <WordCloud wordsFreq={wordsFreq} />
             </div>
           </main>
-          {/* <div><EmotionLabel /></div> */}
         </React.StrictMode>
       </section>
     </div>
