@@ -68,11 +68,12 @@ function App() {
       </React.StrictMode>
       <section className='visualization'>
         <React.StrictMode>        
-          <aside className='wordTable'>
+          {/* <aside className='wordTable'>
             <div>
               <WordList submitNewWord={addWord} />
             </div>
-          </aside>
+          </aside> */}
+
         </React.StrictMode>
         <div className='feelWheel'>
           <Sunburst clickSubmitNewWord={addWord}/>
@@ -85,6 +86,7 @@ function App() {
           <aside>
             <RemoveWordForm submitDeleteWord={submitDeleteWord} />
           </aside>
+          {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete all words?')) this.onCancel() } }>DELETE</div> */}
           </div>
           <main>
             <div className='wordCloud'>

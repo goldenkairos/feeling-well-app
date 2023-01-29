@@ -216,11 +216,3 @@ Sunburst.propTypes = {
 
 export default Sunburst;
 
-//comment to test git push
-
-// //set state
-// const [currentLabel, setCurrentLabel] = useState(null)
-
-// const clickEmotion =() =>{
-//   //when user click the label, we will take the current label => setCurrentLabel = labelRef.current = label;
-// }
