@@ -7,6 +7,8 @@ import axios from "axios";
 import WordList from "./components/WordList.js";
 import Sunburst from "./components/SunBurst.js";
 import RemoveWordForm from "./components/RemoveWordForm.js";
+import AlertDialog from "./components/AlertDialog.js";
+
 
 function App() {
   const [wordsFreq, setWordsFreq] = useState({});
@@ -86,6 +88,17 @@ function App() {
           <aside>
             <RemoveWordForm submitDeleteWord={submitDeleteWord} />
           </aside>
+          <div>
+            <AlertDialog
+              isOpen={true}
+              onClose={()=>{}}
+              title='DELETE ALL WORDS'
+              description='This action will permanently remove all the records of your mental health check-in. Click Agree to comfirm this action.'
+              confirmBtnLabel='Agree'
+
+
+            />
+            </div> 
           {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete all words?')) this.onCancel() } }>DELETE</div> */}
           </div>
           <main>
