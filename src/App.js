@@ -76,7 +76,7 @@ function App() {
           </aside>
         </React.StrictMode>
         <div className='feelWheel'>
-          <Sunburst />
+          <Sunburst clickSubmitNewWord ={addWord}/>
         </div>
         <React.StrictMode>
         <div className='forms'>

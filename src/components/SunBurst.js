@@ -1,15 +1,15 @@
-import React, { useEffect, useRef, useCallback, useMemo, useState } from 'react';
+import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import jsonData from '../static/icons/emotions.json';
 
 import { partition as d3Partition, hierarchy } from 'd3-hierarchy';
 import { scaleLinear, scaleOrdinal } from 'd3-scale';
-import { quantize, interpolate } from 'd3-interpolate';
+import { quantize } from 'd3-interpolate';
 import { interpolateRainbow } from 'd3-scale-chromatic';
 import { arc as d3Arc } from 'd3-shape';
 import { select as d3Select } from 'd3-selection';
-import { text } from 'd3';
-import EmotionLabel from './EmotionLabel.js';
+// import { text } from 'd3';
+// import EmotionLabel from './EmotionLabel.js';
 
 
 // import { transition } from 'd3-transition';
@@ -19,9 +19,10 @@ import EmotionLabel from './EmotionLabel.js';
 const Sunburst = ({
   width = 600,
   centerCircleRadius = 25,
-  onSelect,
-  shouldReset,
-  onReset,
+  clickSubmitNewWord,
+  // onSelect,
+  // shouldReset,
+  // onReset,
 }) => {
   const svgRef = useRef(null);
   const gRef = useRef(null);
@@ -88,18 +89,18 @@ const Sunburst = ({
     [chartRadius, yScale]
   );
 
-  const labelVisible = useMemo(
-    () => (d) => {
-      const layersToShow = 4; //isMobileOnly ? 3 : 4;
+  // const labelVisible = useMemo(
+  //   () => (d) => {
+  //     const layersToShow = 4; //isMobileOnly ? 3 : 4;
 
-      return (
-        d.y1 <= layersToShow &&
-        d.y0 >= 1 &&
-        (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03
-      );
-    },
-    []
-  );
+  //     return (
+  //       d.y1 <= layersToShow &&
+  //       d.y0 >= 1 &&
+  //       (d.y1 - d.y0) * (d.x1 - d.x0) > 0.03
+  //     );
+  //   },
+  //   []
+  // );
 
   const labelTransform = useMemo(
     () => (d) => {
@@ -110,126 +111,129 @@ const Sunburst = ({
     [yScale]
   );
 
-  const getHierarchy = useMemo(
-    () => (p) => {
-      const hierarchy = [];
-      let current = p;
+  // const getHierarchy = useMemo(
+  //   () => (p) => {
+  //     const hierarchy = [];
+  //     let current = p;
 
-      while (current.parent) {
-        hierarchy.unshift(current.data.name);
-        current = current.parent;
-      }
+  //     while (current.parent) {
+  //       hierarchy.unshift(current.data.name);
+  //       current = current.parent;
+  //     }
 
-      return hierarchy;
-    },
-    []
-  );
+  //     return hierarchy;
+  //   },
+  //   []
+  // );
 
-  const arcVisible = useMemo(
-    () => (d) => {
-      const layersToShow = 4; //isMobileOnly ? 3 : 4;
+  // const arcVisible = useMemo(
+  //   () => (d) => {
+  //     const layersToShow = 4; //isMobileOnly ? 3 : 4;
 
-      return d.y1 <= layersToShow && d.y0 >= 1 && d.x1 > d.x0;
-    },
-    []
-  );
+  //     return d.y1 <= layersToShow && d.y0 >= 1 && d.x1 > d.x0;
+  //   },
+  //   []
+  // );
 
-  const clicked = useCallback(
-    (p) => {
-      onSelect(
-        p.parent ? { data: getHierarchy(p), color: parentColor(p) } : null
+  const clicked = useCallback((p) => {
+    console.log("clicked clicked", p?.data?.name);
+    clickSubmitNewWord({ description: p?.data?.name });
+    //function goes here
+  },[]);
+    //   onSelect(
+    //     p.parent ? { data: getHierarchy(p), color: parentColor(p) } : null
         
-      );
+    //   );
 
-      parentRef.current.datum(p.parent || root);
+    //   parentRef.current.datum(p.parent || root);
 
-      root.each(
-        (d) =>
-          (d.target = {
-            x0:
-              Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) *
-              2 *
-              Math.PI,
-            x1:
-              Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) *
-              2 *
-              Math.PI,
-            y0: Math.max(0, d.y0 - p.depth),
-            y1: Math.max(0, d.y1 - p.depth),
-          })
-      );
+    //   root.each(
+    //     (d) =>
+    //       (d.target = {
+    //         x0:
+    //           Math.max(0, Math.min(1, (d.x0 - p.x0) / (p.x1 - p.x0))) *
+    //           2 *
+    //           Math.PI,
+    //         x1:
+    //           Math.max(0, Math.min(1, (d.x1 - p.x0) / (p.x1 - p.x0))) *
+    //           2 *
+    //           Math.PI,
+    //         y0: Math.max(0, d.y0 - p.depth),
+    //         y1: Math.max(0, d.y1 - p.depth),
+    //       })
+    //   );
 
-      const t = gRef.current.transition().duration(750);
-      const tShort = gRef.current.transition().duration(100);
+    //   const t = gRef.current.transition().duration(750);
+    //   const tShort = gRef.current.transition().duration(100);
 
-      parentRef.current.style('cursor', () => (p.parent ? 'pointer' : null));
+    //   parentRef.current.style('cursor', () => (p.parent ? 'pointer' : null));
 
-      if (p.parent) {
-        parentRef.current
-          .transition(t)
-          .attr('fill', () => {
-            return parentColor(p);
-          })
-          .attr('opacity', 1);
-      } else {
-        parentRef.current.transition(t).attr('opacity', 0);
-      }
+    //   if (p.parent) {
+    //     parentRef.current
+    //       .transition(t)
+    //       .attr('fill', () => {
+    //         return parentColor(p);
+    //       })
+    //       .attr('opacity', 1);
+    //   } else {
+    //     parentRef.current.transition(t).attr('opacity', 0);
+    //   }
 
-      parentRef.current
-        .transition(t)
-        .attr('r', p.height === 0 ? chartRadius / 2 : centerCircleRadius);
+    //   parentRef.current
+    //     .transition(t)
+    //     .attr('r', p.height === 0 ? chartRadius / 2 : centerCircleRadius);
 
-      parentLabelRef.current
-        .transition(tShort)
-        .attr('fill-opacity', () => 0)
-        .transition()
-        .delay(0)
-        .text(() => p.data.name)
-        .transition(tShort)
-        .attr('fill-opacity', () => 1);
+    //   parentLabelRef.current
+    //     .transition(tShort)
+    //     .attr('fill-opacity', () => 0)
+    //     .transition()
+    //     .delay(0)
+    //     .text(() => p.data.name)
+    //     .transition(tShort)
+    //     .attr('fill-opacity', () => 1);
 
-      // Transition the data on all arcs, even the ones that aren’t visible,
-      // so that if this transition is interrupted, entering arcs will start
-      // the next transition from the desired position.
-      pathRef.current
-        .transition(t)
-        .tween('data', (d) => {
-          const i = interpolate(d.current, d.target);
-          return (t) => (d.current = i(t));
-        })
-        .filter(function (d) {
-          return +this.getAttribute('fill-opacity') || arcVisible(d.target);
-        })
-        .attr('fill-opacity', (d) => (arcVisible(d.target) ? opacity(d) : 0))
-        .attrTween('d', (d) => () => arc(d.current));
+    //   // Transition the data on all arcs, even the ones that aren’t visible,
+    //   // so that if this transition is interrupted, entering arcs will start
+    //   // the next transition from the desired position.
+    //   pathRef.current
+    //     .transition(t)
+    //     .tween('data', (d) => {
+    //       const i = interpolate(d.current, d.target);
+    //       return (t) => (d.current = i(t));
+    //     })
+    //     .filter(function (d) {
+    //       return +this.getAttribute('fill-opacity') || arcVisible(d.target);
+    //     })
+    //     .attr('fill-opacity', (d) => (arcVisible(d.target) ? opacity(d) : 0))
+    //     .attrTween('d', (d) => () => arc(d.current));
 
-      labelRef.current
-        .filter(function (d) {
-          return +this.getAttribute('fill-opacity') || labelVisible(d.target);
-        })
-        .transition(t)
-        .attr('fill-opacity', (d) => +labelVisible(d.target))
-        .attrTween('transform', (d) => () => labelTransform(d.current));
+    //   labelRef.current
+    //     .filter(function (d) {
+    //       return +this.getAttribute('fill-opacity') || labelVisible(d.target);
+    //     })
+    //     .transition(t)
+    //     .attr('fill-opacity', (d) => +labelVisible(d.target))
+    //     .attrTween('transform', (d) => () => labelTransform(d.current));
 
-    },
-    [
-      parentRef,
-      labelRef,
-      pathRef,
-      gRef,
-      arc,
-      root,
-      chartRadius,
-      centerCircleRadius,
-      onSelect,
-      getHierarchy,
-      arcVisible,
-      parentColor,
-      opacity,
-      labelVisible,
-      labelTransform,
-    ]
-  );
+    // },
+    // [
+    //   parentRef,
+    //   labelRef,
+    //   pathRef,
+    //   gRef,
+    //   arc,
+    //   root,
+    //   chartRadius,
+    //   centerCircleRadius,
+    //   onSelect,
+    //   getHierarchy,
+    //   arcVisible,
+    //   parentColor,
+    //   opacity,
+    //   labelVisible,
+    //   labelTransform,
+    // ]
+  // );
 
   // on mount: create the svg element and it's group child
   // on unmount: remove svg
@@ -291,8 +295,8 @@ const Sunburst = ({
       .style('cursor', 'pointer')
       .on('mouseover', handleMouseOver)
       .on('mouseout', handleMouseOut)
-      .on('click', clicked)
-      .attr('label',(d) => d.data.name); //adding to show the name of the label
+      // .on('click', clicked) //ORIGINAL CODE
+      .on("click", (e, d) => clicked(d)); //UPDATED CODE
 
     path.append('title').text((d) => d.data.name);
 
@@ -387,8 +391,8 @@ Sunburst.propTypes = {
   width: PropTypes.number,
   centerCircleRadius: PropTypes.number,
   // onSelect: PropTypes.func.isRequired,
-  shouldReset: PropTypes.bool.isRequired,
-  onReset: PropTypes.func.isRequired,
+  // shouldReset: PropTypes.bool.isRequired,
+  // onReset: PropTypes.func.isRequired,
 };
 
 export default Sunburst;
