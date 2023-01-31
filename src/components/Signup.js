@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Form, Button, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../contexts/AuthContext";
+import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory} from "react-router-dom"; //V6 react has useNavigate instead of useHistory
 
 export default function Signup() {

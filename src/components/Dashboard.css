@@ -1,0 +1,119 @@
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+} */
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+/* 
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+.visualization {
+  display: grid;
+grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+height: 100vh;
+}
+
+.wordCloud {
+  grid-column: 3/4;
+  grid-row:2/3;
+  padding-left: 100px;
+}
+
+.feelWheel {
+  /* float: left; */
+  grid-column: 1/2;
+  grid-row:1/2;
+  margin:-10px;
+}
+
+.forms {
+  grid-row:2/3;
+  grid-column:1/2;
+}
+
+/* .wordTable {
+  height: fit-content;
+} */
+.feeling {
+  border: #616263;
+  border-radius: 5px;
+  font-size: .8rem;
+  font:bold;
+  border-style:solid;  
+  background-color: #a7eff3;
+  opacity: .8;
+  margin: 5px;
+  width: 70px;
+  align-content: center;
+
+}
+
+.feeling:hover {
+  background-color: aqua;
+  color: black;
+}
+
+/* .container {
+  display:grid
+} */
+
+/* Updating the input field  */
+.inputfield {
+  border:none; /*removing the button box */
+  border-bottom: 2px solid black;
+  outline:none; /*removing the outline box */
+}
+
+/* moving the submit button to the right of the form */
+.submitButton, .deleteButton {
+  float: center;
+  margin-left: .5rem;
+  border-radius: 5px;
+}
+.submitButton:hover{
+  background-color: rgb(122, 232, 151);
+  border-radius: 5px;
+  color: rgb(18, 52, 25);
+}
+
+.deleteButton:hover{
+  background-color: rgb(246, 56, 69);
+  border-radius: 5px;
+  color: rgb(254, 253, 254);
+  opacity: .8;
+}
+
+/* keeping the form and submit button inline */
+.submitField {
+  display: inline-block;
+  /* align-items: center; */
+}
