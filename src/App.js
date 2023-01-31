@@ -121,21 +121,21 @@ function App() {
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-    <Dashboard />
+    {/* <Dashboard /> */}
       <div className="w-100" style={{ maxWidth: "300px" }}>
         <Router>
           <AuthProvider>
             <Switch>
               {/* <Route exact path="/" element={<Dashboard />}/> */}
               {/* replace with below due to change in ReactV6 */}
-              {/* <Route
+              <Route
                 path="/"
                 element={
                   <PrivateRoute>
                     <Dashboard />
                   </PrivateRoute>
                 }
-              ></Route> */}
+              ></Route>
               <Route
                 path="/update-profile"
                 element={
@@ -146,6 +146,7 @@ function App() {
               ></Route>
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
+              {/* <Route path="/logout" element={<Logout />} /> */}
               <Route path="/forgot-password" element={<ForgotPassword />} />
             </Switch>
           </AuthProvider>
