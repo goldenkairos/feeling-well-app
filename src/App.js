@@ -121,6 +121,7 @@ function App() {
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
+    <Dashboard />
       <div className="w-100" style={{ maxWidth: "300px" }}>
         <Router>
           <AuthProvider>
@@ -151,6 +152,7 @@ function App() {
         </Router>
       </div>
     </Container>
+    
   );
 }
 

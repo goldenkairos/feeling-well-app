@@ -6,6 +6,7 @@ import React from "react";
 // import "./src/App.css";
 
 // import NewWordForm from "./components/NewWordForm.js";
+import "./Dashboard.css";
 import NewWordForm from "./NewWordForm.js";
 import WordCloud from "./wordCloud.js";
 import { useState, useEffect } from "react";
