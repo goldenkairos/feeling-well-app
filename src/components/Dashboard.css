@@ -37,9 +37,10 @@
   }
 } */
 .visualization {
-  display: grid;
+display: grid;
 grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
 height: 100vh;
+
 }
 
 .wordCloud {

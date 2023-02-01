@@ -1,5 +1,5 @@
 // import React, { useState} from 'react'
-import { Card, Button, Alert } from "react-bootstrap";
+import { Card, Button, Alert,Container,Nav,NavDropdown,Navbar } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory } from "react-router-dom";
 // import React from "react";
@@ -97,17 +97,38 @@ export default function Dashboard() {
   useEffect(getWords, []);
 
   return (
+    
     <div>
       <React.StrictMode>
         <header>
-          <h1>Feeling Well</h1>
+        <Navbar class="navbar navbar-light bg-light">
+      <Container>
+        <Navbar.Brand class="navbar-brand" href="">
+        Feeling Well</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="">Home</Nav.Link>
+            <Nav.Link href="update-profile">Update Profile</Nav.Link>
+            <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
         </header>
-        <h2>😌Hello there, how are you today?☀️</h2>
-        <div className="w-100 text-canter mt-2">
-          <Button variant="link" onClick={handleLogout}>
-            Log Out
-          </Button>
-        </div>
+        <h2 className="w-100 expand text-center mt-2">😌Hello there, how are you today?☀️</h2>
+
       </React.StrictMode>
       <section className="visualization">
         <React.StrictMode>
