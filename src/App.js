@@ -101,6 +101,7 @@
 
 // export default App;
 import React from "react";
+import './App.css';
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext.js";
 import Signup from "./components/Signup.js";
