@@ -109,6 +109,8 @@ export default function Dashboard() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="">Home</Nav.Link>
+            <Nav.Link href="about-us">About Us</Nav.Link>
+            <Nav.Link href="source-code">Source Code</Nav.Link>
             <Nav.Link href="update-profile">Update Profile</Nav.Link>
             <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -137,11 +139,9 @@ export default function Dashboard() {
               <WordList submitNewWord={addWord} />
             </div>
           </aside> */}
-        </React.StrictMode>
         <div className="feelWheel">
           <Sunburst clickSubmitNewWord={addWord} />
         </div>
-        <React.StrictMode>
           <div className="forms">
             <aside>
               <NewWordForm createNewWordForm={addWord} />

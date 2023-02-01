@@ -129,7 +129,7 @@ const Sunburst = ({
     feMerge.append("feMergeNode").attr("in", "SourceGraphic");
 
     return () => {
-      d3Select(svg).remove();
+      svg.remove();
     };
   }, [width]);
 
