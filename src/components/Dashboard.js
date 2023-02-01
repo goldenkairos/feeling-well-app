@@ -110,7 +110,7 @@ export default function Dashboard() {
           <Nav className="me-auto">
             <Nav.Link href="">Home</Nav.Link>
             <Nav.Link href="about-us">About Us</Nav.Link>
-            <Nav.Link href="source-code">Source Code</Nav.Link>
+            <Nav.Link href="credit">Credit</Nav.Link>
             <Nav.Link href="update-profile">Update Profile</Nav.Link>
             <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -131,9 +131,9 @@ export default function Dashboard() {
         </header>
         <h2 className="w-100 expand text-center mt-2">😌Hello there, how are you today?☀️</h2>
 
-      </React.StrictMode>
+      {/* </React.StrictMode> */}
       <section className="visualization">
-        <React.StrictMode>
+        {/* <React.StrictMode> */}
           {/* <aside className='wordTable'>
             <div>
               <WordList submitNewWord={addWord} />
@@ -155,9 +155,9 @@ export default function Dashboard() {
             <div className="wordCloud">
               <WordCloud wordsFreq={wordsFreq} />
             </div>
-          </main>
-        </React.StrictMode>
+          </main>        
       </section>
+      </React.StrictMode>
     </div>
   );
 }
