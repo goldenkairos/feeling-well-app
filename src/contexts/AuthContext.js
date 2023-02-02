@@ -1,7 +1,10 @@
+import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase.js";
 
 const AuthContext = React.createContext();
+
+
 
 export function useAuth() {
   return useContext(AuthContext);
@@ -16,7 +19,18 @@ export function AuthProvider({ children }) {
     //return a promise
     return auth
       .createUserWithEmailAndPassword(email, password)
-      .then((cred) => console.log(cred.user.uid));
+      .then((cred) => {
+        axios
+        .post(`${process.env.REACT_APP_BACKEND_URL}/accounts`,cred.user.uid)
+        .then((response) =>{
+          console.log(response.data, "ACCOUNT CREATED SUCCESSFULLY");
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+      
+      // console.log(cred.user.uid)
+    });
     //helper function to post new user
     //how to get the user.uid
   }
