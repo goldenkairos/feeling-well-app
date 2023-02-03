@@ -1,13 +1,5 @@
 // import React, { useState} from 'react'
-import {
-  Card,
-  Button,
-  Alert,
-  Container,
-  Nav,
-  NavDropdown,
-  Navbar,
-} from "react-bootstrap";
+
 import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory } from "react-router-dom";
 
@@ -23,21 +15,21 @@ import NavBar from "./NavBar.js";
 
 export default function WelcomePage() {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { currentUser,  } = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
-  const history = useHistory();
+  // const history = useHistory();
 
-  async function handleLogout() {
-    setError(""); //clearing out the error when user logout
+  // async function handleLogout() {
+  //   setError(""); //clearing out the error when user logout
 
-    try {
-      logout();
-      history("/");
-      getWords();
-    } catch {
-      setError("Failed to log out");
-    }
-  }
+  //   try {
+  //     logout();
+  //     history("/");
+  //     getWords();
+  //   } catch {
+  //     setError("Failed to log out");
+  //   }
+  // }
 
   const getWords = () => {
     let getWordsURL = null;

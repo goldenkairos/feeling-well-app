@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 export default function NavBar() {
   const [error, setError] = useState("");
-  const { logout } = useAuth();
+  const { logout,currentUser } = useAuth();
 
   const history = useHistory();
 
@@ -22,6 +22,11 @@ export default function NavBar() {
     }
   }
 
+  const logOutVisible = currentUser ? (<Nav.Link onClick={handleLogout}>Log Out</Nav.Link>) : ("");
+  const logInVisible = currentUser ? ("") : (<Nav.Link href="login">Login</Nav.Link>);
+  const signUpVisible = currentUser ? ("") : (<Nav.Link href="signup">Sign Up</Nav.Link>);
+  const updateProfileVisible = currentUser ? (<Nav.Link href="update-profile">Update Profile</Nav.Link>):("");
+
   return (
     <div>
       <Navbar class="navbar navbar-light bg-light ">
@@ -34,11 +39,10 @@ export default function NavBar() {
             <Nav className="me-auto">
               <Nav.Link href="">Home</Nav.Link>
               <Nav.Link href="about-us">About Us</Nav.Link>
-              <Nav.Link href="credit">Credit</Nav.Link>
-              <Nav.Link href="update-profile">Update Profile</Nav.Link>
-              <Nav.Link href="login">Login</Nav.Link>
-              <Nav.Link href="signup">Sign Up</Nav.Link>
-              <Nav.Link onClick={handleLogout}>Log Out</Nav.Link>
+              {logInVisible}
+              {updateProfileVisible}
+              {logOutVisible}
+              {signUpVisible}
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

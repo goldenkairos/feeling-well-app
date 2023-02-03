@@ -22,13 +22,11 @@ function App() {
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh" }}
     >
-      {/* <Dashboard /> */}
       <div style={{ minWidth: "300px" }}>
         <Router>
           <AuthProvider>
             <Switch>
-              <Route path="/" element={<WelcomePage />}></Route>
-              
+              <Route path="/" element={<WelcomePage />}></Route>              
               <Route
                 path="/"
                 element={
@@ -37,7 +35,6 @@ function App() {
                   </PrivateRoute>
                 }
               ></Route>
-
               <Route
                 path="/update-profile"
                 element={
