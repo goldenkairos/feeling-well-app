@@ -1,8 +1,8 @@
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { auth } from "../firebase.js";
-
 const AuthContext = React.createContext();
+
 
 
 
@@ -14,7 +14,19 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const [accountsList, setAccountsList] = useState([])
+  
 
+  // const [wordsFreq, setWordsFreq] = useState({})
+  // const getWordsforAccount = (account_uid) => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_BACKEND_URL}/accounts/${account_uid}/all_words`)
+  //     .then((response) => {
+  //       setWordsFreq(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
 
   //helper function to get all accounts
   const getAccounts = () => {
@@ -32,6 +44,23 @@ export function AuthProvider({ children }) {
       console.log(error);
     });
   }
+
+    // //helper function to get all accounts
+    // const getAllwordsForAccount = (account_uid) => {
+    //   axios
+    //   .get(`${process.env.REACT_APP_BACKEND_URL}/accounts/${account_uid}/all_words`)
+    //   .then((response) => {
+    //     const accountsListCopy = response.data.map((account) => {
+    //       return {
+    //         ...account,
+    //       };
+    //     });
+    //     setAccountsList(accountsListCopy);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+    // }
 
 
   //helper function to add new account
@@ -56,6 +85,7 @@ export function AuthProvider({ children }) {
 
   //if we don't use firebase, we will have to check signup/login function differently, but everything else should still work
   function signup(email, password) {
+    
     //return a promise
     return auth
       .createUserWithEmailAndPassword(email, password)
@@ -67,7 +97,12 @@ export function AuthProvider({ children }) {
     );}
 
   function login(email, password) {
-    return auth.signInWithEmailAndPassword(email, password);
+    // console.log("login function is called here")
+    return auth
+    .signInWithEmailAndPassword(email, password)
+  // .then((cred)=>{
+  //   console.log("CURRENT USER",cred.user.uid);}
+  //   );
   }
 
   function logout() {

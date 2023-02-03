@@ -27,6 +27,9 @@ export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
+  console.log("CURRENT USER IS HEREEEEE")
+  console.log(currentUser)
+  console.log(currentUser.uid)
 
   async function handleLogout() {
     setError(""); //clearing out the error when user logout
@@ -62,9 +65,28 @@ export default function Dashboard() {
   //   setSelected("word")
   // }
 
+  // const getWords = () => {
+  //   axios
+  //     .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
+  //     .then((response) => {
+  //       setWordsFreq(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // };
+  
+  
   const getWords = () => {
+    let getWordsURL = null
+    if (!currentUser.uid) {
+      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`
+    } else {
+      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`
+    }
+
     axios
-      .get(`${process.env.REACT_APP_BACKEND_URL}/words`)
+      .get(getWordsURL)
       .then((response) => {
         setWordsFreq(response.data);
       })
@@ -74,13 +96,15 @@ export default function Dashboard() {
   };
 
   const addWord = (newWordInfo) => {
-    console.log("Happy New Year!");
-    console.log("We made huge progress today");
-    console.log("addWord is called here");
-    console.log("Happy new Year!");
-
+    console.log("addWord func called here!");
+    let postWordsURL = null
+    if (!currentUser.uid) {
+      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`
+    } else {
+      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/words`
+    }
     axios
-      .post(`${process.env.REACT_APP_BACKEND_URL}/words`, newWordInfo)
+      .post(postWordsURL, newWordInfo)
       .then((response) => {
         console.log(response.data);
         getWords();

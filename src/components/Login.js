@@ -8,7 +8,7 @@ export default function Login() {
   const emailRef = useRef();
   const passwordRef = useRef();
   // const passwordConfirmRef = useRef();
-  const { login } = useAuth();
+  const { login, currentUser } = useAuth();
   //validation state
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -27,6 +27,9 @@ export default function Login() {
       //this happens when the password match await/async
       await login(emailRef.current.value, passwordRef.current.value);
       history("/"); //replaced history.push("/")
+      // console.log("CURRENT USER",currentUser)
+      //call the getwords function
+      
     } catch (error) {
       setError("Failed to sign in");
       console.log(error);

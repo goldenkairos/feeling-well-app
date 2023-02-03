@@ -12,6 +12,7 @@ export default function Signup() {
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
   const history = useHistory()
+  // const { currentUser } = useAuth();
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -26,6 +27,7 @@ export default function Signup() {
       //this happens when the password match await/async
       await signup(emailRef.current.value, passwordRef.current.value)
       history("/") //replaced history.push("/")
+      
     } catch(error) {
       setError('Failed to create an account')
       console.log(error)
