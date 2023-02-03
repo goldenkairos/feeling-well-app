@@ -115,8 +115,14 @@ export default function Dashboard() {
   };
 
   const submitDeleteWord = (deleteWordInfo) => {
+    let deleteWordsURL = null
+    if (!currentUser.uid) {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`
+    } else {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/${deleteWordInfo}`
+    }
     axios
-      .delete(`${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`)
+      .delete(deleteWordsURL)
       .then((response) => {
         console.log(response.data);
         getWords();
