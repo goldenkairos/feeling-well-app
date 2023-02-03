@@ -17,13 +17,15 @@ export default function NavBar({getWords}) {
     try {
       logout();
       history("/");
-      getWords();
       window.location.reload();
+      getWords();
       // getAllWords()
     } catch {
       setError("Failed to log out");
     }
   };
+
+
 
 
 
