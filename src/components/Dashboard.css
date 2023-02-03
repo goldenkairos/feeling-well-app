@@ -38,15 +38,15 @@
 } */
 .visualization {
 display: grid;
-grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+grid-template: 1fr 1fr 1fr 1fr/1fr 1fr 1fr 1fr;
 height: 100vh;
-
 }
 
 .wordCloud {
   grid-column: 3/4;
   grid-row:2/3;
   padding-left: 100px;
+  padding-top: 200px;
 }
 
 .feelWheel {

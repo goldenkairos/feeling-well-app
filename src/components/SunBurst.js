@@ -102,7 +102,7 @@ const Sunburst = ({
       .append("svg")
       .style("width", "40vw")
       .style("height", "80vh")
-      .attr("viewBox", [0, 0, width, width])
+      .attr("viewBox", [0, 0, width, width],)
       .style("font", "10px sans-serif");
 
     const g = svg
