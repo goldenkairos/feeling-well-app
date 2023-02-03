@@ -32,11 +32,13 @@ export default function Dashboard() {
 
   // async function handleLogout() {
   //   setError(""); //clearing out the error when user logout
+  //   const getAllWords = () => {getWords()}
 
   //   try {
   //     logout();
   //     history("/")
-  //     getWords();
+  //     // getWords();
+  //     getAllWords()
   //   } catch {
   //     setError("Failed to log out");
   //   }
@@ -103,7 +105,7 @@ export default function Dashboard() {
     <div>
       <React.StrictMode>
         <header>
-        <NavBar />
+        <NavBar getWords={getWords} />
 
         </header>
         <h2 className="w-100 expand text-center mt-2">

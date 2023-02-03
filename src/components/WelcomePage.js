@@ -50,9 +50,9 @@ export default function WelcomePage() {
   };
 
   const addWord = (newWordInfo) => {
-    console.log("addWord func called here!");
+    console.log("addWord func called here! ~~~~~~~");
     let postWordsURL = null;
-    if (!currentUser.uid) {
+    if (!currentUser) {
       postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;
     } else {
       postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/words`;
@@ -70,7 +70,7 @@ export default function WelcomePage() {
 
   const submitDeleteWord = (deleteWordInfo) => {
     let deleteWordsURL = null;
-    if (!currentUser.uid) {
+    if (!currentUser) {
       deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`;
     } else {
       deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/${deleteWordInfo}`;

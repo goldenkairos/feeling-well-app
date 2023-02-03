@@ -2,9 +2,9 @@ import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory } from "react-router-dom";
 import "./Dashboard.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function NavBar() {
+export default function NavBar({getWords}) {
   const [error, setError] = useState("");
   const { logout,currentUser } = useAuth();
 
@@ -12,15 +12,22 @@ export default function NavBar() {
 
   async function handleLogout() {
     setError(""); //clearing out the error when user logout
+    // const getAllWords = () => getWords()
 
     try {
       logout();
       history("/");
-      //getWords();
+      getWords();
+      window.location.reload();
+      // getAllWords()
     } catch {
       setError("Failed to log out");
     }
-  }
+  };
+
+
+
+  // handleLogout.then(()=>{getWords()});
 
   const logOutVisible = currentUser ? (<Nav.Link onClick={handleLogout}>Log Out</Nav.Link>) : ("");
   const logInVisible = currentUser ? ("") : (<Nav.Link href="login">Login</Nav.Link>);
