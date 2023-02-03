@@ -131,12 +131,19 @@ function App() {
               {/* replace with below due to change in ReactV6 */}
               <Route
                 path="/"
-                element={
-                  <PrivateRoute>
-                    <Dashboard />
-                  </PrivateRoute>
+                element={                   
+                    <Dashboard />                   
                 }
               ></Route>
+              <Route
+                path="/"
+                element={
+                   <PrivateRoute>
+                    <Dashboard />
+                   </PrivateRoute>
+                }
+              ></Route>
+
               <Route
                 path="/update-profile"
                 element={

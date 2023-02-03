@@ -26,7 +26,7 @@ export default function Signup() {
       setLoading(true) //when we sign up the user, we disable the sign up button so we don't create multiple user account when they clicking button multiple time
       //this happens when the password match await/async
       await signup(emailRef.current.value, passwordRef.current.value)
-      history("/") //replaced history.push("/")
+      history("/login") //replaced history.push("/")
       
     } catch(error) {
       setError('Failed to create an account')

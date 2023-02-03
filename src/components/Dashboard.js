@@ -27,16 +27,17 @@ export default function Dashboard() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const history = useHistory();
-  console.log("CURRENT USER IS HEREEEEE")
-  console.log(currentUser)
-  console.log(currentUser.uid)
+  // console.log("CURRENT USER IS HEREEEEE")
+  // console.log(currentUser)
+  // console.log(currentUser.uid)
 
   async function handleLogout() {
     setError(""); //clearing out the error when user logout
 
     try {
-      await logout();
-      history("/");
+      logout();
+      history("/")
+      getWords();
     } catch {
       setError("Failed to log out");
     }
@@ -79,7 +80,7 @@ export default function Dashboard() {
   
   const getWords = () => {
     let getWordsURL = null
-    if (!currentUser.uid) {
+    if (!currentUser) {
       getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`
     } else {
       getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`
