@@ -10,10 +10,7 @@ import {
 } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory } from "react-router-dom";
-// import React from "react";
-// import "./src/App.css";
 
-// import NewWordForm from "./components/NewWordForm.js";
 import "./Dashboard.css";
 import NewWordForm from "./NewWordForm.js";
 import WordCloud from "./wordCloud.js";
@@ -24,30 +21,30 @@ import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 
-export default function Dashboard() {
+export default function WelcomePage() {
   const [error, setError] = useState("");
   const { currentUser, logout } = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
   const history = useHistory();
 
-  // async function handleLogout() {
-  //   setError(""); //clearing out the error when user logout
+  async function handleLogout() {
+    setError(""); //clearing out the error when user logout
 
-  //   try {
-  //     logout();
-  //     history("/")
-  //     getWords();
-  //   } catch {
-  //     setError("Failed to log out");
-  //   }
-  // }
+    try {
+      logout();
+      history("/");
+      getWords();
+    } catch {
+      setError("Failed to log out");
+    }
+  }
 
   const getWords = () => {
-    let getWordsURL = null
+    let getWordsURL = null;
     if (!currentUser) {
-      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`
+      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;
     } else {
-      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`
+      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`;
     }
 
     axios
@@ -62,11 +59,11 @@ export default function Dashboard() {
 
   const addWord = (newWordInfo) => {
     console.log("addWord func called here!");
-    let postWordsURL = null
+    let postWordsURL = null;
     if (!currentUser.uid) {
-      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`
+      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;
     } else {
-      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/words`
+      postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/words`;
     }
     axios
       .post(postWordsURL, newWordInfo)
@@ -80,11 +77,11 @@ export default function Dashboard() {
   };
 
   const submitDeleteWord = (deleteWordInfo) => {
-    let deleteWordsURL = null
+    let deleteWordsURL = null;
     if (!currentUser.uid) {
-      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/${deleteWordInfo}`;
     } else {
-      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/${deleteWordInfo}`
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/${deleteWordInfo}`;
     }
     axios
       .delete(deleteWordsURL)
@@ -103,8 +100,7 @@ export default function Dashboard() {
     <div>
       <React.StrictMode>
         <header>
-        <NavBar />
-
+          <NavBar />
         </header>
         <h2 className="w-100 expand text-center mt-2">
           😌Hello there, how are you today?☀️
