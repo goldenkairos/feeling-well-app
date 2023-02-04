@@ -84,17 +84,17 @@ export function AuthProvider({ children }) {
   };
 
   //if we don't use firebase, we will have to check signup/login function differently, but everything else should still work
-  function signup(email, password) {
+  function signup(firstName,lastName,email, password) {
     
     //return a promise
     return auth
       .createUserWithEmailAndPassword(email, password)
-  .then((cred) => {
+.then((cred) => {cred.user.updateProfile({
+  displayName: firstName});
     console.log("USER ID",cred.user.uid);
-      addAccount(cred.user.uid)}
-      
-      // console.log(cred.user.uid)
-    );}
+      addAccount(cred.user.uid)})
+
+    ;}
 
   function login(email, password) {
     // console.log("login function is called here")
@@ -129,6 +129,8 @@ export function AuthProvider({ children }) {
     });
     return unsubscribe; //this will unsubscribe us from the onAuthStateChanged listener when we unmount the component
   }, []);
+
+  console.log(currentUser);
 
   const value = {
     currentUser,

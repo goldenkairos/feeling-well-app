@@ -27,7 +27,7 @@ export default function Login() {
       //this happens when the password match await/async
       await login(emailRef.current.value, passwordRef.current.value);
       history("/"); //replaced history.push("/")
-      // console.log("CURRENT USER",currentUser)
+      console.log("CURRENT USER",currentUser)
       //call the getwords function
       
     } catch (error) {

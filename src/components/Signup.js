@@ -8,6 +8,8 @@ export default function Signup() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth()
+  const firstNameRef = useRef();
+  const lastNameRef = useRef();
   //validation state
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
@@ -25,7 +27,7 @@ export default function Signup() {
       setError('') //set the error back to blank
       setLoading(true) //when we sign up the user, we disable the sign up button so we don't create multiple user account when they clicking button multiple time
       //this happens when the password match await/async
-      await signup(emailRef.current.value, passwordRef.current.value)
+      await signup(firstNameRef.current.value, lastNameRef.current.value,emailRef.current.value, passwordRef.current.value)
       history("/login") //replaced history.push("/")
       
     } catch(error) {
@@ -44,6 +46,14 @@ export default function Signup() {
           
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
+          <Form.Group id="firstName">
+              <Form.Label>First Name</Form.Label>
+              {<Form.Control type="name" ref={firstNameRef} required />}
+            </Form.Group>
+            <Form.Group id="lastName">
+              <Form.Label>Last Name</Form.Label>
+              {<Form.Control type="name" ref={lastNameRef} required />}
+            </Form.Group>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
               {<Form.Control type="email" ref={emailRef} required />}

@@ -30,6 +30,8 @@ export default function Dashboard() {
   const [wordsFreq, setWordsFreq] = useState({});
   const history = useHistory();
 
+  console.log("CURRENT NAMEEEEEEEEEEEE")
+  console.log("HELLO HELLO HELLO",currentUser.displayName);
   // async function handleLogout() {
   //   setError(""); //clearing out the error when user logout
   //   const getAllWords = () => {getWords()}
@@ -108,9 +110,11 @@ export default function Dashboard() {
         <NavBar getWords={getWords} />
 
         </header>
-        <h2 className="w-100 expand text-center mt-2">
+        {/* <h2 className="w-100 expand text-center mt-2">
           😌Hello there, how are you today?☀️
-        </h2>
+          HELLO WORLD
+          
+        </h2> */}
 
         {/* </React.StrictMode> */}
         <section className="visualization">
