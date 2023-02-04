@@ -15,6 +15,7 @@ import PrivateRoute from "./components/PrivateRoute.js";
 import ForgotPassword from "./components/ForgotPassword.js";
 import UpdateProfile from "./components/UpdateProfile.js";
 import WelcomePage from "./components/WelcomePage.js";
+import AboutUs from "./components/AboutUs.js";
 
 function App() {
   return (
@@ -46,6 +47,7 @@ function App() {
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/about-us" element={<AboutUs />} />
             </Switch>
           </AuthProvider>
         </Router>
