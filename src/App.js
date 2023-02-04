@@ -52,7 +52,7 @@ function App() {
           </AuthProvider>
         </Router>
       </div>
-    </Container>
+</Container>
   );
 }
 

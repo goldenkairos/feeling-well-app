@@ -39,12 +39,13 @@ export default function NavBar({getWords}) {
   return (
     <div>
       <Navbar class="navbar navbar-light bg-light ">
-        <Container>
+        <Container >
           <Navbar.Brand class="navbar-brand" href="">
-            Feeling Well
+            🌻Feeling Well
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
+          <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+          {/* <Navbar.Collapse id="basic-navbar-nav"> */}
+          <Navbar id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="">Home</Nav.Link>
               <Nav.Link href="about-us">About Us</Nav.Link>
@@ -66,7 +67,8 @@ export default function NavBar({getWords}) {
                 </NavDropdown.Item>
               </NavDropdown> */}
             </Nav>
-          </Navbar.Collapse>
+          {/* </Navbar.Collapse> */}
+          </Navbar>
         </Container>
       </Navbar>
     </div>

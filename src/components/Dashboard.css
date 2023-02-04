@@ -101,16 +101,18 @@ height: 100vh;
   border-radius: 5px;
 }
 .submitButton:hover{
-  background-color: rgb(122, 232, 151);
+  background-color: rgb(249, 243, 243);
+  font-weight: 600;
   border-radius: 5px;
-  color: rgb(18, 52, 25);
+  color: rgb(0, 13, 255);
 }
 
 .deleteButton:hover{
-  background-color: rgb(246, 56, 69);
+  background-color: rgb(249, 243, 243);
   border-radius: 5px;
-  color: rgb(254, 253, 254);
+  color: rgb(213, 0, 0);
   opacity: .8;
+  font-weight: 600;
 }
 
 /* keeping the form and submit button inline */
