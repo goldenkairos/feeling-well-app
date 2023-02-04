@@ -115,6 +115,11 @@ export default function WelcomePage() {
           <div className="feelWheel">
             <Sunburst clickSubmitNewWord={addWord} />
           </div>
+          {/* <main> */}
+            <div className="wordCloud">
+              <WordCloud wordsFreq={wordsFreq} />
+            </div>
+          {/* </main> */}
           <div className="forms">
             <aside>
               <NewWordForm createNewWordForm={addWord} />
@@ -124,11 +129,7 @@ export default function WelcomePage() {
             </aside>
             {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete all words?')) this.onCancel() } }>DELETE</div> */}
           </div>
-          <main>
-            <div className="wordCloud">
-              <WordCloud wordsFreq={wordsFreq} />
-            </div>
-          </main>
+
         </section>
       </React.StrictMode>
     </div>

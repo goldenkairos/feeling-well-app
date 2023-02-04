@@ -13,19 +13,18 @@ function WordCloud({ wordsFreq }) {
 
 
   return (
-    <div style={{ height: 500, width: 600 }}>
+
       <ReactWordcloud
         words={word2}
         options={{
           fontSizes: [40,100],
           rotations: [0,90],
           rotationAngles:[-90,0,90],
-          // enableOptimizations: true,
-          // deterministic:true,////change the position of the word each render
-          
         }}
+        style={{ height: 700, width: 700 }}
+        
       />
-    </div>
+
   );
 }
 

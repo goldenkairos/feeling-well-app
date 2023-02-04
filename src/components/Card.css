@@ -1,0 +1,13 @@
+.cardBody {
+    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 10vh;
+   width: 300px;
+   
+
+}

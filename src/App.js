@@ -19,11 +19,11 @@ import AboutUs from "./components/AboutUs.js";
 
 function App() {
   return (
-    <Container
-      className="d-flex align-items-center justify-content-center"
-      style={{ minHeight: "100vh" }}
-    >
-      <div style={{ minWidth: "300px" }}>
+//     <Container
+// style={{"margin":"20px","max-width":"fit-content"}}
+//     >
+<div>
+      {/* <div className="cardBody"> */}
         <Router>
           <AuthProvider>
             <Switch>
@@ -51,8 +51,9 @@ function App() {
             </Switch>
           </AuthProvider>
         </Router>
-      </div>
-</Container>
+      {/* </div> 
+</Container>*/}
+</div>
   );
 }
 
