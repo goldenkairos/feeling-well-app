@@ -20,6 +20,7 @@ function WordCloud({ wordsFreq }) {
           fontSizes: [40,100],
           rotations: [0,90],
           rotationAngles:[-90,0,90],
+          fontFamily:"Helvetica",
         }}
         style={{ height: 700, width: 700 }}
         

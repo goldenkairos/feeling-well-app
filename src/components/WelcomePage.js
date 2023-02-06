@@ -12,10 +12,11 @@ import axios from "axios";
 import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
+import "./WelcomePage.css";
 
 export default function WelcomePage() {
   const [error, setError] = useState("");
-  const { currentUser,  } = useAuth();
+  const { currentUser } = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
   // const history = useHistory();
 
@@ -86,9 +87,11 @@ export default function WelcomePage() {
       });
   };
 
-  const welcomeMessage = currentUser ? (<p>😌Hello {currentUser.displayName}, how are you today?☀️</p>) : (<p>😌Hello there, how are you today?☀️</p>);
-
-
+  const welcomeMessage = currentUser ? (
+    <p>😌Hello {currentUser.displayName}, how are you today?☀️</p>
+  ) : (
+    <p>😌Hello there, how are you today?☀️</p>
+  );
 
   useEffect(getWords, [currentUser]);
 
@@ -98,10 +101,8 @@ export default function WelcomePage() {
         <header>
           <NavBar />
         </header>
-        <h2 className="w-100 expand text-center mt-2">
-        {welcomeMessage}
-          {/* 😌Hello there, how are you today?☀️ */}
-          {/* <p>{currentUser.displayName}</p> */}
+        <h2 className="welcomeMessage">
+          {welcomeMessage}
         </h2>
 
         {/* </React.StrictMode> */}
@@ -116,9 +117,9 @@ export default function WelcomePage() {
             <Sunburst clickSubmitNewWord={addWord} />
           </div>
           {/* <main> */}
-            <div className="wordCloud">
-              <WordCloud wordsFreq={wordsFreq} />
-            </div>
+          <div className="wordCloud">
+            <WordCloud wordsFreq={wordsFreq} />
+          </div>
           {/* </main> */}
           <div className="forms">
             <aside>
@@ -127,10 +128,40 @@ export default function WelcomePage() {
             <aside>
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
             </aside>
-            {/* <div className='delete-button' onClick={() => { if (window.confirm('Are you sure you wish to delete all words?')) this.onCancel() } }>DELETE</div> */}
           </div>
-
         </section>
+        <div className="About">
+        <section className="firstIntro">
+          <h1 className="firstHeader">Feelings are complicated...</h1>
+        </section>
+        <section className="secondIntro">
+          <h1 className="secondHeader">
+            Feeling Well is a tool for checking in with yourself using the
+            Feeling Wheel method
+          </h1>
+          <p className="secondParagraph">
+            Designed by Gloria Willcox in 1982, the feeling wheel is a proven
+            visual aid that helps people recognize, talk about, and change their
+            feelings. Inspired by Joseph Zinker's ideas of conceiving the
+            therapist as an artist (Zinker, 1978), and Robert Plutchik's
+            comparison of emotions to colors (Plutchik's 1980), Wilcox set out
+            to design the feelings wheel using the four basic emotions: scared,
+            sad, mad and glad. To keep things balance between comfortable and
+            uncomfortable emotions, she expanded "glad" into three emotions:
+            joyful, powerful, and peaceful.
+          </p>
+        </section>
+        <section className="thirdIntro">
+          <h1 className="thirdHeader">
+            The exploration of emotions is a vehicle to become aware of your
+            power.
+          </h1>
+          <p className="thirdParagraph">
+            Use the feeling wheel to hone this power and build an emotional
+            vocabulary that improves your communication quality.
+          </p>
+        </section>
+        </div>
       </React.StrictMode>
     </div>
   );

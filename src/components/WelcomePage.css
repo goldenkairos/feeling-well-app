@@ -1,0 +1,55 @@
+.About {
+    font-family: Helvetica, sans-serif;
+    /* background-color: linear-gradient(#ffffff,#fff7f2, 
+    #ffe0ce, #d9c2c8, #c6bedf,#bbbee5, 
+    #bcc3ff,#b4c5ff,#a5c2ff,#94befc,#6f9de6,#598ad9,#598ad9); */
+}
+.firstIntro  {
+    background-image: linear-gradient(#ffffff,#fff7f2, 
+    #ffe0ce, #d9c2c8, #c6bedf);
+    height: 600px;
+    display: block;
+    
+}
+
+.firstHeader{
+    padding-top: 200px;
+    font-size: 50px;
+    display: flex;
+    /* vertical-align: middle; */
+    font-weight: bold;
+
+    /* justify-content: center; */
+    
+}
+.secondIntro  {
+     background-image: linear-gradient(#c6bedf,#bbbee5,  
+     #bcc3ff,#b4c5ff,#a5c2ff); 
+    height: 600px;
+    display: block;
+    
+}
+
+.secondHeader, .thirdHeader {
+    padding-top: 300px 0;
+    font-size: 50px;
+    display: flex;
+    /* vertical-align: middle; */
+    font-weight: bold;
+    
+}
+
+.thirdIntro  {
+    background-image: linear-gradient(#a5c2ff,#94befc,#6f9de6,#598ad9,#598ad9);
+    height: 600px;
+    display: block;
+}
+
+p {
+font-size: 20px;
+}
+.welcomeMessage {
+    display: flex;
+    position: relative;
+    padding-left: 100px;
+}
