@@ -3,21 +3,26 @@
 display: grid;
 grid-template: 1fr 1fr /1fr 1fr;
 height: 100vh;
-width: fit-content;
+margin:100px;
+/* width: fit-content; */
 
 }
 
 .wordCloud {
   grid-column: 2/3;
   grid-row:1/2;
-  padding-left: 100px;
-  padding-top: 50px;
+  /* padding-left: 100px; */
+  /* padding-top: 50px; */
   display: flex;
+  /* max-width: 1000px; */
   
 }
-
+/* .wordCloud {
+  height:50%;
+  width: 50%;
+} */
 .feelWheel {
-  /* float: left; */
+
   grid-column: 1/2;
   grid-row:1/2;
   /* margin:-10px; */

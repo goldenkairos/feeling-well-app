@@ -136,8 +136,8 @@ export default function WelcomePage() {
         </section>
         <section className="secondIntro">
           <h1 className="secondHeader">
-            Feeling Well is a tool for checking in with yourself using the
-            Feeling Wheel method
+            This is a tool for checking in with yourself using the
+            Feeling Wheel method.
           </h1>
           <p className="secondParagraph">
             Designed by Gloria Willcox in 1982, the feeling wheel is a proven
