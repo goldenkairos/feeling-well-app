@@ -18,10 +18,11 @@ margin-right: 100px;
   /* max-width: 1000px; */
   
 }
-/* .actualWordCloud{
-  height:700px;
-  width: 700px;
-} */
+
+.actualWordCloud{
+  padding-top: 10%;
+}
+
 .feelWheel {
 
   grid-column: 1/2;

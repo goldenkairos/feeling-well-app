@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 //same as Signup except passwordConfirmation
 export default function ForgotPassword() {
   const emailRef = useRef();
-  // const passwordRef = useRef();
-  // const passwordConfirmRef = useRef();
   const { resetPassword } = useAuth();
   //validation state
   const [error, setError] = useState("");
@@ -18,9 +16,6 @@ export default function ForgotPassword() {
     e.preventDefault();
 
     //validation check
-    // if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-    //   return setError('Passwords do not match')
-    // }
     try {
       setError(""); //set the error back to blank
       setLoading(true); //when we sign up the user, we disable the sign up button so we don't create multiple user account when they clicking button multiple time
@@ -36,9 +31,9 @@ export default function ForgotPassword() {
     setLoading(false);
   }
   return (
-    <>
-      <Card>
-        <Card.Body>
+    <div className="cardContainer">
+      <Card className="cardBody">
+        <Card.Body >
           <h2 className="text-center mb-4">Change Password</h2>
 
           {error && <Alert variant="danger">{error}</Alert>}
@@ -60,6 +55,6 @@ export default function ForgotPassword() {
       <div className="w-100 text-center mt-2">
         Need an account? <Link to="/signup">Sign Up</Link>
       </div>
-    </>
+    </div>
   );
 }

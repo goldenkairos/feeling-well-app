@@ -11,22 +11,18 @@ function WordCloud({ wordsFreq }) {
     });
   }
 
-
   return (
-
-      <ReactWordcloud className="actualWordCloud"
-        words={word2}
-        options={{
-          fontSizes: [40,100],
-          rotations: [0,90],
-          rotationAngles:[-90,0,90],
-          fontFamily:"Helvetica",
-        }}
-        // style={{ height: .8, width: .8 }}
-        style={{ opacity:.9}}
-        
-      />
-
+    <ReactWordcloud
+      className="actualWordCloud"
+      words={word2}
+      options={{
+        fontSizes: [40, 100],
+        rotations: [0, 90],
+        rotationAngles: [-90, 0, 90],
+        fontFamily: "Helvetica",
+      }}
+      style={{ opacity: 0.9, height: "75%", width: "75%" }}
+    />
   );
 }
 

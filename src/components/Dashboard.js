@@ -32,19 +32,6 @@ export default function Dashboard() {
 
   console.log("CURRENT NAMEEEEEEEEEEEE");
   console.log("HELLO HELLO HELLO", currentUser.displayName);
-  // async function handleLogout() {
-  //   setError(""); //clearing out the error when user logout
-  //   const getAllWords = () => {getWords()}
-
-  //   try {
-  //     logout();
-  //     history("/")
-  //     // getWords();
-  //     getAllWords()
-  //   } catch {
-  //     setError("Failed to log out");
-  //   }
-  // }
 
   const getWords = () => {
     let getWordsURL = null;
