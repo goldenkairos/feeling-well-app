@@ -13,6 +13,7 @@ import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 import "./WelcomePage.css";
+import BarChart from "./BarChart.js";
 
 export default function WelcomePage() {
   const [error, setError] = useState("");
@@ -106,20 +107,12 @@ export default function WelcomePage() {
         </section>      
         {/* </React.StrictMode> */}
         <section className="visualization">
-          {/* <React.StrictMode> */}
-          {/* <aside className='wordTable'>
-            <div>
-              <WordList submitNewWord={addWord} />
-            </div>
-          </aside> */}
           <div className="feelWheel">
             <Sunburst clickSubmitNewWord={addWord} />
           </div>
-          {/* <main> */}
           <div className="wordCloud">
             <WordCloud wordsFreq={wordsFreq} />
           </div>
-          {/* </main> */}
           <div className="forms">
             <aside>
               <NewWordForm createNewWordForm={addWord} />
@@ -127,6 +120,9 @@ export default function WelcomePage() {
             <aside>
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
             </aside>
+          </div>
+          <div>
+            <BarChart wordsFreq={wordsFreq} />
           </div>
         </section>
         <div className="About">
