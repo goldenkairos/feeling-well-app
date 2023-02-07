@@ -1,6 +1,14 @@
-.navbar {
-    font-size: large !important;
+.navbarCustom {
+    --bs-nav-link-font-size:1vw;
+    /* font-size: 1.5rem !important; */
     align-items: center;
+    /* border: 2px dotted ; */
+    /* border-color: black; */
+    
+}
+.navbar-brand {
+    --bs-navbar-brand-font-size:1.5vw;
+    
 }
 
 .navBarContainer {

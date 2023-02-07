@@ -1,8 +1,9 @@
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext.js";
 import { Link, useNavigate as useHistory } from "react-router-dom";
-import "./Dashboard.css";
+// import "./Dashboard.css";
 import React, { useState, useEffect } from "react";
+import "./NavBar.css";
 
 export default function NavBar({getWords}) {
   const [error, setError] = useState("");
@@ -38,9 +39,9 @@ export default function NavBar({getWords}) {
 
   return (
     <div>
-      <Navbar class="navbar navbar-light bg-light ">
+      <Navbar className="navbarCustom navbar-light bg-light ">
         <Container className="navBarContainer" >
-          <Navbar.Brand class="navbar-brand" href="">
+          <Navbar.Brand className="navbar-brand" href="">
             🌻Feeling Well
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav"/>
