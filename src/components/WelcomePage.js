@@ -88,9 +88,9 @@ export default function WelcomePage() {
   };
 
   const welcomeMessage = currentUser ? (
-    <p>😌Hello {currentUser.displayName}, how are you today?☀️</p>
+    <h2 className="welcomeMessage">Hello {currentUser.displayName}, how are you today?</h2>
   ) : (
-    <p>😌Hello there, how are you today?☀️</p>
+    <h2 className="welcomeMessage">Hello there, how are you today?</h2>
   );
 
   useEffect(getWords, [currentUser]);
@@ -100,11 +100,8 @@ export default function WelcomePage() {
       <React.StrictMode>
         <header>
           <NavBar />
-        </header>
-        <h2 className="welcomeMessage">
-          {welcomeMessage}
-        </h2>
-
+        </header>        
+          {welcomeMessage}        
         {/* </React.StrictMode> */}
         <section className="visualization">
           {/* <React.StrictMode> */}
