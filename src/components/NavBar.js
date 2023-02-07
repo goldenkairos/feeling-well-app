@@ -39,7 +39,7 @@ export default function NavBar({getWords}) {
   return (
     <div>
       <Navbar class="navbar navbar-light bg-light ">
-        <Container >
+        <Container className="navBarContainer" >
           <Navbar.Brand class="navbar-brand" href="">
             🌻Feeling Well
           </Navbar.Brand>

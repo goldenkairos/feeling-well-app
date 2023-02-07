@@ -1,7 +1,10 @@
 .navbar {
-    font-size: 10rem !important;
+    font-size: large !important;
     align-items: center;
+}
 
+.navBarContainer {
+    font-size: xx-large;
 }
  /* .navbar:hover{
     color: rgb(75, 16, 223) !important;
