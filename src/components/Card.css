@@ -1,3 +1,8 @@
+.cardContainer {
+    padding-top: 250px;
+}
+
+
 .cardBody {
     margin: auto;
     margin-left: auto;
@@ -7,6 +12,6 @@
    align-items: center;
    justify-content: center;
    min-height: 10vh;
-   width: 300px;
+   width:350px;
 
 }

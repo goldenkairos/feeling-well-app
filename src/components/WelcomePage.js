@@ -88,9 +88,9 @@ export default function WelcomePage() {
   };
 
   const welcomeMessage = currentUser ? (
-    <p>😌Hello {currentUser.displayName}, how are you today?☀️</p>
+    <h1>😌Hello {currentUser.displayName}, how are you today?☀️</h1>
   ) : (
-    <p>😌Hello there, how are you today?☀️</p>
+    <h1>😌Hello there, how are you today?☀️</h1>
   );
 
   useEffect(getWords, [currentUser]);

@@ -38,10 +38,10 @@ export default function Login() {
     setLoading(false);
   }
   return (
-<div>
+<div className="cardContainer">
       <Card className="cardBody"
       >
-        <Card.Body style={{ minWidth: "10px" }}>
+        <Card.Body >
           <h2 className="text-center mb-4">Log In</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
