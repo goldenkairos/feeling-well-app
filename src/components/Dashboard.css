@@ -3,8 +3,8 @@
 display: grid;
 grid-template: 1fr 1fr /1fr 1fr;
 height: 100vh;
-margin:100px;
-/* width: fit-content; */
+margin-left:100px;
+margin-right: 100px;
 
 }
 

@@ -100,11 +100,8 @@ export default function WelcomePage() {
       <React.StrictMode>
         <header>
           <NavBar />
-        </header>
-        <h2 className="welcomeMessage">
-          {welcomeMessage}
-        </h2>
-
+        </header>        
+          {welcomeMessage}        
         {/* </React.StrictMode> */}
         <section className="visualization">
           {/* <React.StrictMode> */}

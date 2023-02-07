@@ -56,8 +56,82 @@ margin-left:100px;
 margin-right: 100px;
 }
 .welcomeMessage {
+    margin-left: 90px;
+    margin-top:30px;
     display: flex;
     position: relative;
-    padding-left: 100px;
-    padding-top: 20px;
+    padding-left: 10px;
+    padding-right:10px;
+    font-family: Helvetica ;
+    font-size: 25px;
+    font-weight: 200;
+    /* padding-top: 200px; */
 }
+
+.welcomeMessage{
+	position: relative;
+	background: #ffe868;
+	border-radius: .2em;
+    width: fit-content;
+    height: 70px;
+    align-items: center;
+    align-content: center;
+}
+
+.welcomeMessage:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border: 44px solid transparent;
+	border-top-color:#ffe54c;
+	border-bottom: 0;
+	border-right: 0;
+	margin-left: -22px;
+	margin-bottom: -43px;
+}
+
+/* CSS */
+/* .welcomeMessage {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 20px 13px;
+  outline: 0;
+  border: 1px solid black;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none; 
+  touch-action: manipulation;
+  width: fit-content;
+  height: 70px;
+  align-items: center;
+  
+}
+
+.welcomeMessage:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+  
+}
+
+.welcomeMessage:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 13px 50px 13px;
+  }
+} */
