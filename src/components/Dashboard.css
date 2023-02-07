@@ -27,6 +27,9 @@ margin-right: 100px;
 
   grid-column: 1/2;
   grid-row:1/2;
+  display: flex;
+  flex-direction: column;
+  /* flex-direction: row; */
   /* margin:-10px; */
   padding-top: 20px !important;
 }

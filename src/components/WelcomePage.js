@@ -88,9 +88,9 @@ export default function WelcomePage() {
   };
 
   const welcomeMessage = currentUser ? (
-    <h1>😌Hello {currentUser.displayName}, how are you today?☀️</h1>
+    <p>Hello {currentUser.displayName}, how are you today?</p>
   ) : (
-    <h1>😌Hello there, how are you today?☀️</h1>
+    <p>Hello there, how are you today?</p>
   );
 
   useEffect(getWords, [currentUser]);
@@ -101,9 +101,7 @@ export default function WelcomePage() {
         <header>
           <NavBar />
         </header>
-        <section className="welcomeMessage">       
-          {welcomeMessage} 
-        </section>      
+    
         {/* </React.StrictMode> */}
         <section className="visualization">
           {/* <React.StrictMode> */}
@@ -113,6 +111,9 @@ export default function WelcomePage() {
             </div>
           </aside> */}
           <div className="feelWheel">
+          <section className="welcomeMessage">       
+          {welcomeMessage} 
+        </section>  
             <Sunburst clickSubmitNewWord={addWord} />
           </div>
           {/* <main> */}

@@ -50,37 +50,44 @@
     display: block;
 }
 
-p {
+/* p {
 font-size: 20px;
 margin-left:100px;
 margin-right: 100px;
-}
-.welcomeMessage {
+} */
+
+/* .welcomeMessage {
     margin-left: 90px;
-    margin-top:30px;
+    margin-top:30px; */
+    /* display: flex; */
+    /* position: relative; */
+    /* padding-left: 10px;
+    padding-right:10px; */
+    /* font-family: Helvetica ; */
+    /* font-size: 25px; */
+    /* font-weight: 100px; */
+    /* padding-top: 200px; }*/
+
+
+.welcomeMessage{
+	position: relative;
+	background: #ffe868;
+	border-radius: .8em;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    align-content: center;
     display: flex;
-    position: relative;
     padding-left: 10px;
     padding-right:10px;
     font-family: Helvetica ;
-    font-size: 25px;
-    font-weight: 200;
-    /* padding-top: 200px; */
+    font-size:1.5rem;
+
 }
 
-/* .welcomeMessage{
-	position: relative;
-	background: #ffe868;
-	border-radius: .2em;
-    width: fit-content;
-    height: 70px;
-    align-items: center;
-    align-content: center;
-} */
-
-/* .welcomeMessage:after {
+.welcomeMessage:after {
 	content: '';
-	position: absolute;
+	/* position: absolute; */
 	bottom: 0;
 	left: 50%;
 	width: 0;
@@ -91,7 +98,7 @@ margin-right: 100px;
 	border-right: 0;
 	margin-left: -22px;
 	margin-bottom: -43px; 
-    } */
+    }
 
 /* CSS */
 /* .welcomeMessage {
