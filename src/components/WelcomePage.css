@@ -9,8 +9,7 @@
     #ffe0ce, #d9c2c8, #c6bedf);
     height: 600px;
     display: block;
-    
-    
+  
 }
 
 .firstHeader{
@@ -84,8 +83,6 @@ margin-right: 100px;
     padding-bottom: 0px;
     font-family: Helvetica ;
     font-size:1vw;
-
-
 }
 
 .welcomeMessage:after {

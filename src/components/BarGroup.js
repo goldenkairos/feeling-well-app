@@ -1,5 +1,5 @@
 import React from 'react';
-import './Graph.css';
+import './BarGraph.css';
 
 export default function BarGroup(props) {
   let barPadding = 2

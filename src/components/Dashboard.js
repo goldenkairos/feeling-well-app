@@ -113,7 +113,7 @@ export default function Dashboard() {
             </aside>
           </div>
           <div>
-            <BarChart wordsFreq={wordsFreq} />
+            <BarChart className="BarChart" wordsFreq={wordsFreq} />
           </div>
 
         </section>

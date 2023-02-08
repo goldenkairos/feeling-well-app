@@ -4,17 +4,22 @@ body {
   }
   
   .title {
-    font-size: 1.4em;
+    font-size: 1.5vw;
     font-weight: 300;
   }
   
   .bar-group .name-label {
     text-anchor: end;
     font-weight: 300;
-    font-size: 1em;
+    font-size: .7vw;
     fill: #333;
+    width: fit-content;
   }
-  
+  /*.barChart {
+    width: 1000px;
+    height: 1000px;
+ 
+  }*/
   .bar-group .value-label {
     text-anchor: end;
     fill: #fff;

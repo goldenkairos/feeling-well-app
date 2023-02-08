@@ -21,7 +21,7 @@ function WordCloud({ wordsFreq }) {
         rotationAngles: [-90, 0, 90],
         fontFamily: "Helvetica",
       }}
-      style={{ opacity: 0.9, height: "75%", width: "75%" }}
+      style={{ opacity: 0.9, height: "80%", width: "80%" }}
     />
   );
 }
