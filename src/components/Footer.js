@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer className="Footer">
     <span className="madeBy">
-    Made by
+    We Rule! Made by
     <a className="Minh" href="https://goldenkairos.github.io/minhseikel.github.io/"> Minh Seikel </a>
     and 
     <a className="Wanjun" href="https://github.com/wjlan"> Wanjun Lan   </a>

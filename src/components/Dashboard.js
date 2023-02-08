@@ -1,15 +1,5 @@
-// import React, { useState} from 'react'
-import {
-  Card,
-  Button,
-  Alert,
-  Container,
-  Nav,
-  NavDropdown,
-  Navbar,
-} from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext.js";
-import { Link, useNavigate as useHistory } from "react-router-dom";
+import { useNavigate as useHistory } from "react-router-dom";
 // import React from "react";
 // import "./src/App.css";
 
@@ -24,7 +14,7 @@ import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 import BarChart from "./BarChart.js";
-import Footer from "./Footer.js"
+
 
 
 export default function Dashboard() {

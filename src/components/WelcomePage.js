@@ -8,7 +8,6 @@ import NewWordForm from "./NewWordForm.js";
 import WordCloud from "./wordCloud.js";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-// import WordList from "./WordList.js";
 import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
@@ -20,19 +19,7 @@ export default function WelcomePage() {
   const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
-  // const history = useHistory();
 
-  // async function handleLogout() {
-  //   setError(""); //clearing out the error when user logout
-
-  //   try {
-  //     logout();
-  //     history("/");
-  //     getWords();
-  //   } catch {
-  //     setError("Failed to log out");
-  //   }
-  // }
 
   const getWords = () => {
     let getWordsURL = null;

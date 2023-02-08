@@ -14,21 +14,7 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   const [accountsList, setAccountsList] = useState([])
-  
 
-  // const [wordsFreq, setWordsFreq] = useState({})
-  // const getWordsforAccount = (account_uid) => {
-  //   axios
-  //     .get(`${process.env.REACT_APP_BACKEND_URL}/accounts/${account_uid}/all_words`)
-  //     .then((response) => {
-  //       setWordsFreq(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // };
-
-  //helper function to get all accounts
   const getAccounts = () => {
     axios
     .get(`${process.env.REACT_APP_BACKEND_URL}/accounts`)
@@ -44,23 +30,6 @@ export function AuthProvider({ children }) {
       console.log(error);
     });
   }
-
-    // //helper function to get all accounts
-    // const getAllwordsForAccount = (account_uid) => {
-    //   axios
-    //   .get(`${process.env.REACT_APP_BACKEND_URL}/accounts/${account_uid}/all_words`)
-    //   .then((response) => {
-    //     const accountsListCopy = response.data.map((account) => {
-    //       return {
-    //         ...account,
-    //       };
-    //     });
-    //     setAccountsList(accountsListCopy);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
-    // }
 
 
   //helper function to add new account
@@ -91,7 +60,7 @@ export function AuthProvider({ children }) {
       .createUserWithEmailAndPassword(email, password)
 .then((cred) => {cred.user.updateProfile({
   displayName: firstName});
-    console.log("USER ID",cred.user.uid);
+    // console.log("USER ID",cred.user.uid);
       addAccount(cred.user.uid)})
 
     ;}
@@ -130,7 +99,7 @@ export function AuthProvider({ children }) {
     return unsubscribe; //this will unsubscribe us from the onAuthStateChanged listener when we unmount the component
   }, []);
 
-  console.log(currentUser);
+  // console.log(currentUser);
 
   const value = {
     currentUser,
