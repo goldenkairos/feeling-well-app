@@ -13,10 +13,11 @@ body {
   .bar-group .name-label {
     text-anchor: end;
     font-weight: 500;
-    font-size: .7vw;
+    font-size: .9vw;
     fill: #333;
     width: fit-content;
     opacity: .8;
+ 
   }
 
   .bar-group .value-label {

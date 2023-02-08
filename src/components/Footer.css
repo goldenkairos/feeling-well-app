@@ -3,19 +3,19 @@
     font-size: x-large;
     display: flex;
     justify-content: center;
-    color:#a6a6a6;
+    color:#fffefe;
     text-decoration: none;
     font-family: Helvetica;
 }
 
  .Minh, .Wanjun, .SourceCode {
     text-decoration-color: none;
-    color: #a6a6a6;
+    color: #ffffff;
 }
 
 .Minh:hover, .Wanjun:hover, .SourceCode:hover {
     text-decoration-color: none;
-    color: #363535;
+    color: #a9a7a7;
 }
 
 

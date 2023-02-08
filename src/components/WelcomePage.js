@@ -159,6 +159,7 @@ export default function WelcomePage() {
         </div> */}
         <Footer />
       </React.StrictMode>
+      
     </div>
   );
 }

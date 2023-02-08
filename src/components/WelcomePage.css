@@ -93,38 +93,10 @@ margin-right: 100px;
 	width: 0;
 	height: 0;
 	border: 44px solid transparent;
-	border-top-color:#ffe54c;
+	border-top-color:#ffe868;
 	border-bottom: 0;
 	border-right: 0;
 	margin-left: -22px;
-	margin-bottom: -43px; 
+	margin-bottom: -50px; 
     }
 
-/* 
-.Footer {
-    background-color: #ffffff;
-    font-size: x-large;
-    display: flex;
-    justify-content: center;
-    color:#686767;
-    text-decoration: none;
-    font-family: Helvetica;
-}
-
- .Minh, .Wanjun, .SourceCode {
-    text-decoration-color: none;
-    color:#686767;
-}
-
-.Minh:hover, .Wanjun:hover, .SourceCode:hover {
-    text-decoration-color: none;
-    color: #363535;
-}
-
-
-.madeBy {
-    padding-right: 2vw;
-}
-.source {
-    padding-left:2vw;
-} */

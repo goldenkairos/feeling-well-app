@@ -24,7 +24,7 @@ export default function BarChart({ wordsFreq }) {
   return (
     <svg width="1000" height="1000" >
       <g className="container">
-        <text className="title" x="10" y="30">Your Well-being at A Glance</text>
+        <text className="title" x="150" y="30">Your Well-being at A Glance</text>
         <g className="chart" transform="translate(100,60)">
           {barGroups}
         </g>
