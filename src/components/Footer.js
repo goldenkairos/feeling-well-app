@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="Footer">
     <span className="madeBy">
     Made by
-    <a className="Minh" href="https://goldenkairos.github.io/minhseikel.github.io/"> Miinh Seikel </a>
+    <a className="Minh" href="https://goldenkairos.github.io/minhseikel.github.io/"> Minh Seikel </a>
     and 
     <a className="Wanjun" href="https://github.com/wjlan"> Wanjun Lan   </a>
     </span>
