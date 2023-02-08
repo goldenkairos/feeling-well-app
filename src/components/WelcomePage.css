@@ -13,7 +13,7 @@
 }
 
 .firstHeader{
-    padding-top: 200px;
+    padding-top: 150px;
     font-size: 50px;
     display: flex;
     /* vertical-align: middle; */
@@ -44,16 +44,16 @@
 }
 
 .thirdIntro  {
-    background-image: linear-gradient(#a5c2ff,#94befc,#6f9de6,#598ad9,#598ad9);
+    background-image: linear-gradient(#a5c2ff,#94befc,#6f9de6,#598ad9,#2561c2);
     height: 600px;
     display: block;
 }
 
-/* p {
+.secondParagraph,.thirdParagraph {
 font-size: 20px;
 margin-left:100px;
 margin-right: 100px;
-} */
+}
 
 /* .welcomeMessage {
     margin-left: 90px;
@@ -100,45 +100,31 @@ margin-right: 100px;
 	margin-bottom: -43px; 
     }
 
-/* CSS */
-/* .welcomeMessage {
-  font-size: 16px;
-  font-weight: 200;
-  letter-spacing: 1px;
-  padding: 13px 20px 13px;
-  outline: 0;
-  border: 1px solid black;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0);
-  user-select: none;
-  -webkit-user-select: none; 
-  touch-action: manipulation;
-  width: fit-content;
-  height: 70px;
-  align-items: center;
-  
+/* 
+.Footer {
+    background-color: #ffffff;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    color:#686767;
+    text-decoration: none;
+    font-family: Helvetica;
 }
 
-.welcomeMessage:after {
-  content: "";
-  background-color: #ffe54c;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  top: 7px;
-  left: 7px;
-  transition: 0.2s;
-  
+ .Minh, .Wanjun, .SourceCode {
+    text-decoration-color: none;
+    color:#686767;
 }
 
-.welcomeMessage:hover:after {
-  top: 0px;
-  left: 0px;
+.Minh:hover, .Wanjun:hover, .SourceCode:hover {
+    text-decoration-color: none;
+    color: #363535;
 }
 
-@media (min-width: 768px) {
-  .button-52 {
-    padding: 13px 50px 13px;
-  }
+
+.madeBy {
+    padding-right: 2vw;
+}
+.source {
+    padding-left:2vw;
 } */

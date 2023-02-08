@@ -1,0 +1,27 @@
+.Footer {
+    background-color: #2561c2;
+    font-size: x-large;
+    display: flex;
+    justify-content: center;
+    color:#a6a6a6;
+    text-decoration: none;
+    font-family: Helvetica;
+}
+
+ .Minh, .Wanjun, .SourceCode {
+    text-decoration-color: none;
+    color: #a6a6a6;
+}
+
+.Minh:hover, .Wanjun:hover, .SourceCode:hover {
+    text-decoration-color: none;
+    color: #363535;
+}
+
+
+.madeBy {
+    padding-right: 2vw;
+}
+.source {
+    padding-left:2vw;
+}

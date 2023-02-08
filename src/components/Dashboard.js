@@ -24,6 +24,8 @@ import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 import BarChart from "./BarChart.js";
+import Footer from "./Footer.js"
+
 
 export default function Dashboard() {
   const [error, setError] = useState("");

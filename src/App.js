@@ -16,6 +16,7 @@ import ForgotPassword from "./components/ForgotPassword.js";
 import UpdateProfile from "./components/UpdateProfile.js";
 import WelcomePage from "./components/WelcomePage.js";
 import AboutUs from "./components/AboutUs.js";
+import About from "./components/About.js";
 
 function App() {
   return (
@@ -44,10 +45,11 @@ function App() {
                   </PrivateRoute>
                 }
               ></Route>
+              <Route path="/about" element={<About />} />
               <Route path="/signup" element={<Signup />} />
               <Route path="/login" element={<Login />} />
               <Route path="/forgot-password" element={<ForgotPassword />} />
-              <Route path="/about-us" element={<AboutUs />} />
+              {/* <Route path="/about-us" element={<AboutUs />} /> */}
             </Switch>
           </AuthProvider>
         </Router>

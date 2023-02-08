@@ -14,6 +14,7 @@ import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 import "./WelcomePage.css";
 import BarChart from "./BarChart.js";
+import Footer from "./Footer.js";
 
 export default function WelcomePage() {
   const [error, setError] = useState("");
@@ -102,15 +103,7 @@ export default function WelcomePage() {
         <header>
           <NavBar />
         </header>
-
-        {/* </React.StrictMode> */}
         <section className="visualization">
-          {/* <React.StrictMode> */}
-          {/* <aside className='wordTable'>
-            <div>
-              <WordList submitNewWord={addWord} />
-            </div>
-          </aside> */}
           <div className="feelWheel">
             <section className="welcomeMessage">{welcomeMessage}</section>
             <Sunburst clickSubmitNewWord={addWord} />
@@ -132,7 +125,7 @@ export default function WelcomePage() {
             <BarChart wordsFreq={wordsFreq} />
           </div>
         </section>
-        <div className="About">
+        {/* <div className="About">
           <section className="firstIntro">
             <h1 className="firstHeader">Feelings are complicated...</h1>
           </section>
@@ -163,7 +156,8 @@ export default function WelcomePage() {
               vocabulary that improves your communication quality.
             </p>
           </section>
-        </div>
+        </div> */}
+        <Footer />
       </React.StrictMode>
     </div>
   );

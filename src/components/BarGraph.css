@@ -1,25 +1,24 @@
 body {
-    font-family: "Lato", sans-serif;
+    font-family: Helvetica, sans-serif;
     font-size: 16px;
   }
   
   .title {
     font-size: 1.5vw;
-    font-weight: 300;
+    font-weight: 400;
+    color: #333333;
+    opacity: .8;
   }
   
   .bar-group .name-label {
     text-anchor: end;
-    font-weight: 300;
+    font-weight: 500;
     font-size: .7vw;
     fill: #333;
     width: fit-content;
+    opacity: .8;
   }
-  /*.barChart {
-    width: 1000px;
-    height: 1000px;
- 
-  }*/
+
   .bar-group .value-label {
     text-anchor: end;
     fill: #fff;
