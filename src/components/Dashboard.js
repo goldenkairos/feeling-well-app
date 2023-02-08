@@ -23,6 +23,7 @@ import axios from "axios";
 import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
+import BarChart from "./BarChart.js";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -110,6 +111,9 @@ export default function Dashboard() {
             <aside>
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
             </aside>
+          </div>
+          <div>
+            <BarChart wordsFreq={wordsFreq} />
           </div>
 
         </section>

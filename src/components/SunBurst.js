@@ -101,7 +101,7 @@ const Sunburst = ({
     const svg = d3Select(svgRef.current)
       .append("svg")
       .style("width", "40vw")
-      .style("height", "80vh")
+      .style("height", "60vh")
       .attr("viewBox", [0, 0, width, width],)
       .style("font", "10px sans-serif");
 
