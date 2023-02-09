@@ -14,6 +14,7 @@ import NavBar from "./NavBar.js";
 import "./WelcomePage.css";
 import BarChart from "./BarChart.js";
 import Footer from "./Footer.js";
+import DeleteConfirmationModal from "./DeleteConfirmationModal.js";
 
 export default function WelcomePage() {
   const [error, setError] = useState("");
@@ -106,6 +107,9 @@ export default function WelcomePage() {
             </aside>
             <aside>
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
+            </aside>
+            <aside>
+              <DeleteConfirmationModal>DELETE ALL WORDS</DeleteConfirmationModal>
             </aside>
           </div>
           <div className="BarChart">
