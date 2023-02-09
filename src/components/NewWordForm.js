@@ -32,7 +32,7 @@ const NewWordForm = ({createNewWordForm}) =>{
     <form onSubmit={handleNewWordSubmit}>
       <div className='submitField'>
       <p></p>
-        <label htmlFor='description' > Input how you feel in one word: </label>
+        <label htmlFor='description' > Express how you feel in one word: </label>
         <input className="inputfield"
           type='text'
           id='description'
