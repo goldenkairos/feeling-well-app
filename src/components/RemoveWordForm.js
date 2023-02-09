@@ -37,6 +37,7 @@ const RemoveWordForm = ({submitDeleteWord}) =>{
           type='text'
           id='description'
           name='description'
+          size="15"
           value={formData.description}
           onChange={handleChange}
         />
