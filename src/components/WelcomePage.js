@@ -77,6 +77,27 @@ export default function WelcomePage() {
       });
   };
 
+
+  const deleteAllWords = () => {
+    console.log("deleteAllWords func is called")
+    
+    let deleteWordsURL = null;
+    if (!currentUser) {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/all`;
+    } else {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`;
+    }
+    axios
+      .delete(deleteWordsURL)
+      .then((response) => {
+        console.log(response.data);
+        getWords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   const welcomeMessage = currentUser ? (
     <p>Hello {currentUser.displayName}, how are you today?</p>
   ) : (
@@ -109,8 +130,8 @@ export default function WelcomePage() {
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
             </aside>
             <aside>
-              <DeleteConfirmationModal>DELETE ALL WORDS</DeleteConfirmationModal>
-            </aside>
+                <DeleteConfirmationModal deleteAllWords={()=>deleteAllWords()} />
+              </aside>
           </div>
           <div className="BarChart">
             <BarChart wordsFreq={wordsFreq} />

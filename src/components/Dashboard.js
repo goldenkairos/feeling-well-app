@@ -14,8 +14,7 @@ import Sunburst from "./SunBurst.js";
 import RemoveWordForm from "./RemoveWordForm.js";
 import NavBar from "./NavBar.js";
 import BarChart from "./BarChart.js";
-
-
+import DeleteConfirmationModal from "./DeleteConfirmationModal.js";
 
 export default function Dashboard() {
   const [error, setError] = useState("");
@@ -81,6 +80,26 @@ export default function Dashboard() {
       });
   };
 
+  const deleteAllWords = () => {
+    console.log("deleteAllWords func is called")
+    
+    let deleteWordsURL = null;
+    if (!currentUser) {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/all`;
+    } else {
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`;
+    }
+    axios
+      .delete(deleteWordsURL)
+      .then((response) => {
+        console.log(response.data);
+        getWords();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   useEffect(getWords, []);
 
   return (
@@ -93,7 +112,7 @@ export default function Dashboard() {
           <div className="feelWheel">
             <Sunburst clickSubmitNewWord={addWord} />
           </div>
-          <div >
+          <div>
             <WordCloud className="wordCloud" wordsFreq={wordsFreq} />
           </div>
           <div className="forms">
@@ -103,11 +122,15 @@ export default function Dashboard() {
             <aside>
               <RemoveWordForm submitDeleteWord={submitDeleteWord} />
             </aside>
+            <aside>
+              <aside>
+                <DeleteConfirmationModal deleteAllWords={()=>deleteAllWords()} />
+              </aside>
+            </aside>
           </div>
           <div>
             <BarChart className="BarChart" wordsFreq={wordsFreq} />
           </div>
-
         </section>
       </React.StrictMode>
     </div>
