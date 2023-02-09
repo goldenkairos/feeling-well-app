@@ -16,7 +16,7 @@ function WordCloud({ wordsFreq }) {
       className="actualWordCloud"
       words={word2}
       options={{
-        fontSizes: [40, 100],
+        fontSizes: [40, 80],
         rotations: [0, 90],
         rotationAngles: [-90, 0, 90],
         fontFamily: "Helvetica",

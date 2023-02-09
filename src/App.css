@@ -1,5 +1,6 @@
 .App {
-  background-image:linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D);
+  /* background-image:linear-gradient(79deg, #7439db, #C66FBC 48%, #F7944D); */
+width:100vw;
 }
 
 /* .visualization {
@@ -83,9 +84,7 @@ height: 100vh;
   display: inline-block;
   /* align-items: center; }*/
 
-.cardBody {
+/* .cardBody {
   align-items: center;
   justify-content: left;
-  
-
-}
+} */

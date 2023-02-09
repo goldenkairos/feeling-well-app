@@ -7,7 +7,7 @@ grid-template-rows: 1fr 55%;
 /* height: fit-content; */
 margin-left:100px;
 margin-right: 100px;
-margin-top: 40px;
+margin-top: 30px;
 /* justify-content: center; */
 /* border:red */
 }
@@ -41,13 +41,13 @@ margin-top: 40px;
 .forms {
   grid-row:2/3;
   grid-column:1/2;
-  font-size: 1.5rem;
-  font-family: Arial, Helvetica, sans-serif;
-  align-items: center;
+  font-size: 1.2vw;
+  font-family: Helvetica, sans-serif;
+  /* align-items: center; */
   display: flex;
   flex-direction: column; 
   height: 100px;
-  /* padding-top: 20px; */
+  margin-left: 20px;
 
   /* padding-left: 1000px; */
 
