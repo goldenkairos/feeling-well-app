@@ -40,7 +40,7 @@ export default function WelcomePage() {
   };
 
   const addWord = (newWordInfo) => {
-    console.log("addWord func called here! ~~~~~~~");
+    // console.log("addWord func called here! ~~~~~~~");
     let postWordsURL = null;
     if (!currentUser) {
       postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;

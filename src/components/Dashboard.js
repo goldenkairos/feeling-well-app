@@ -23,8 +23,8 @@ export default function Dashboard() {
   const [wordsFreq, setWordsFreq] = useState({});
   const history = useHistory();
 
-  console.log("CURRENT NAMEEEEEEEEEEEE");
-  console.log("HELLO HELLO HELLO", currentUser.displayName);
+  // console.log("CURRENT NAMEEEEEEEEEEEE");
+  // console.log("HELLO HELLO HELLO", currentUser.displayName);
 
   const getWords = () => {
     let getWordsURL = null;
@@ -45,7 +45,7 @@ export default function Dashboard() {
   };
 
   const addWord = (newWordInfo) => {
-    console.log("addWord func called here!");
+    // console.log("addWord func called here!");
     let postWordsURL = null;
     if (!currentUser.uid) {
       postWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;

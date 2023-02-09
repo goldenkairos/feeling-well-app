@@ -42,7 +42,6 @@ const NewWordForm = ({createNewWordForm}) =>{
           onChange={handleChange}
         />
       </div>
-
       <button className="submitButton" type="submit" value="Submit">Submit</button>
     </form>
   );
