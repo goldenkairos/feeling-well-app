@@ -81,7 +81,6 @@ export default function Dashboard() {
   };
 
   const deleteAllWords = () => {
-    console.log("deleteAllWords func is called")
     
     let deleteWordsURL = null;
     if (!currentUser) {
@@ -92,7 +91,7 @@ export default function Dashboard() {
     axios
       .delete(deleteWordsURL)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         getWords();
       })
       .catch((error) => {

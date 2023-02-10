@@ -1,25 +1,16 @@
 
 .visualization {
 display: grid;
-/* grid-template: 1fr 1fr 1fr/1fr 1fr; */
 grid-template-columns: repeat(auto-fill);
 grid-template-rows: 1fr 55%;
-/* height: fit-content; */
 margin-left:100px;
 margin-right: 100px;
 margin-top: 30px;
-/* justify-content: center; */
-/* border:red */
 }
 
 .wordCloud {
   grid-column: 2/3;
   grid-row:1/2;
-  /* padding-left: 100px; */
-  /* padding-top: 50px; */
-  /* display: flex; */
-  /* margin:20px; */
-  /* max-width: 1000px; */
   
 }
 
@@ -33,9 +24,6 @@ margin-top: 30px;
   grid-row:1/2;
   display: flex;
   flex-direction: column;
-  /* flex-direction: row; */
-  /* margin:-10px; */
-  /* padding-top: 20px !important; */
 }
 
 .forms {
@@ -43,27 +31,19 @@ margin-top: 30px;
   grid-column:1/2;
   font-size: 1.2vw;
   font-family: Helvetica, sans-serif;
-  /* align-items: center; */
   display: flex;
   flex-direction: column; 
   height: 100px;
   margin-left: 20px;
-
-  /* padding-left: 1000px; */
-
 }
+
 
 .BarChart {
-  /* padding-top: 3%; */
   grid-row:2/3;
   grid-column: 2/3;
-
-
 }
 
-/* .wordTable {
-  height: fit-content;
-} */
+
 .feeling {
   border: #616263;
   border-radius: 5px;
@@ -83,24 +63,20 @@ margin-top: 30px;
   color: black;
 }
 
-/* .container {
-  display:grid
-} */
 
 /* Updating the input field  */
 .inputfield {
   border:none; /*removing the button box */
   border-bottom: 2px solid rgb(205, 199, 199);
   outline:none; /*removing the outline box */
-  /* margin-left: 10px;*/
   margin-right: 10px;
   opacity: .9;
 }
 label {
   font-family: Helvetica, sans-serif;
   color: #333333;
+  font-size: 1.2vw;
 }
-
 
 .deleteButton:hover{
   background-color: rgb(249, 243, 243);
@@ -113,7 +89,7 @@ label {
 /* keeping the form and submit button inline */
 .submitField {
   display: inline-block;
-  /* align-items: center; */
+  padding:10px;
 }
 
 
@@ -183,4 +159,13 @@ label {
   -webkit-user-select: none;
   touch-action: manipulation;
   
+}
+
+.deleteAll {
+  margin-top:15px;
+}
+
+.toggle-button {
+  padding:20px;
+  font-size: 1.5vw !important;
 }

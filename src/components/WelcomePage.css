@@ -1,5 +1,6 @@
 .About {
     font-family: Helvetica, sans-serif;
+    margin-top: -5vh;
     /* background-color: linear-gradient(#ffffff,#fff7f2, 
     #ffe0ce, #d9c2c8, #c6bedf,#bbbee5, 
     #bcc3ff,#b4c5ff,#a5c2ff,#94befc,#6f9de6,#598ad9,#598ad9); */
@@ -9,30 +10,25 @@
     #ffe0ce, #d9c2c8, #c6bedf);
     height: 600px;
     display: block;
-  
 }
 
 .firstHeader{
     padding-top: 150px;
     font-size: 50px;
     display: flex;
-    /* vertical-align: middle; */
     font-weight: bold;
-    margin:100px;
-
-    /* justify-content: center; */
+    margin-left:100px;
     
 }
 .secondIntro  {
      background-image: linear-gradient(#c6bedf,#bbbee5,  
      #bcc3ff,#b4c5ff,#a5c2ff); 
-    height: 600px;
+    height: 500px;
     display: block;
-    
     
 }
 
-.secondHeader, .thirdHeader {
+.secondHeader, .thirdHeader, .fourthHeader {
     padding-top: 300px 0;
     font-size: 50px;
     display: flex;
@@ -49,23 +45,17 @@
     display: block;
 }
 
-.secondParagraph,.thirdParagraph {
-font-size: 20px;
+.fourthIntro  {
+    background-image: linear-gradient(#6f9de6,#598ad9,#2561c2);
+    height: 600px;
+    display: block;
+}
+
+.firstParagraph,.secondParagraph,.thirdParagraph,.fourthParagraph {
+font-size: 1vw;
 margin-left:100px;
 margin-right: 100px;
 }
-
-/* .welcomeMessage {
-    margin-left: 90px;
-    margin-top:30px; */
-    /* display: flex; */
-    /* position: relative; */
-    /* padding-left: 10px;
-    padding-right:10px; */
-    /* font-family: Helvetica ; */
-    /* font-size: 25px; */
-    /* font-weight: 100px; */
-    /* padding-top: 200px; }*/
 
 
 .welcomeMessage{
@@ -87,7 +77,6 @@ margin-right: 100px;
 
 .welcomeMessage:after {
 	content: '';
-	/* position: absolute; */
 	bottom: 0;
 	left: 50%;
 	width: 0;
