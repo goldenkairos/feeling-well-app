@@ -28,7 +28,7 @@ export default function Dashboard() {
   const getWords = () => {
     let getWordsURL = null;
     if (!currentUser) {
-      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words`;
+      getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/all_words_non_user`;
     } else {
       getWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`;
     }
@@ -54,7 +54,7 @@ export default function Dashboard() {
     axios
       .post(postWordsURL, newWordInfo)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         getWords();
       })
       .catch((error) => {
@@ -85,7 +85,7 @@ export default function Dashboard() {
     
     let deleteWordsURL = null;
     if (!currentUser) {
-      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/all`;
+      deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/words/no_uid_all_words`;
     } else {
       deleteWordsURL = `${process.env.REACT_APP_BACKEND_URL}/accounts/${currentUser.uid}/all_words`;
     }

@@ -13,7 +13,7 @@ const NewWordForm = ({createNewWordForm}) =>{
       [event.target.name]: event.target.value,
     };
     setFormData(newFormData);
-    console.log(event.target.value)
+    // console.log(event.target.value)
 
   };
 
