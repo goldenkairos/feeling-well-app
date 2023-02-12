@@ -15,13 +15,17 @@ function WordCloud({ wordsFreq }) {
     <ReactWordcloud
       className="actualWordCloud"
       words={word2}
+      // fontSize={(word) => Math.log2(word.value) * 1}
       options={{
-        fontSizes: [40, 80],
+        fontSizes: [30, 70],
         rotations: [0, 90],
         rotationAngles: [-90, 0, 90],
         fontFamily: "Helvetica",
+        minSize:[100, 400],
+        size:[100,100],
+        
       }}
-      style={{ opacity: 0.9, height: "80%", width: "80%" }}
+      style={{ opacity: 0.9, height: "75%", width: "75%", fontSizes:"1vw" }}
     />
   );
 }

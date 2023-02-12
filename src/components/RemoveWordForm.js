@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import {MdSend} from "react-icons/md/index.esm.js";
+import "./Dashboard.css";
 
 
 const RemoveWordForm = ({submitDeleteWord}) =>{
@@ -42,8 +44,9 @@ const RemoveWordForm = ({submitDeleteWord}) =>{
           onChange={handleChange}
         />
       </div>
+      <MdSend className="sendButton" />
 
-      <button className="deleteButton">Delete</button>
+      {/* <button className="deleteButton">Delete</button> */}
     </form>
   );
 };

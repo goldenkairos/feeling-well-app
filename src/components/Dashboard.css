@@ -69,7 +69,7 @@ margin-top: 30px;
   border:none; /*removing the button box */
   border-bottom: 2px solid rgb(205, 199, 199);
   outline:none; /*removing the outline box */
-  margin-right: 10px;
+  /* margin-right: 10px; */
   opacity: .9;
 }
 label {
@@ -89,7 +89,7 @@ label {
 /* keeping the form and submit button inline */
 .submitField {
   display: inline-block;
-  padding:10px;
+  padding-bottom:10px;
 }
 
 
@@ -168,4 +168,21 @@ label {
 .toggle-button {
   padding:20px;
   font-size: 1.5vw !important;
+}
+
+
+.sendButton:hover {
+color:gray;
+font-size: 1.2vw;
+}
+
+.sendButton {
+  font-size: 1.2vw;
+  margin-left: 10px;
+  /* padding-left: 10px; */
+  /* padding-left: 2vw; */
+}
+
+.trash:hover{
+  color:red
 }

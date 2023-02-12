@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import {MdSend} from "react-icons/md/index.esm.js";
 
 
 const NewWordForm = ({createNewWordForm}) =>{
@@ -42,7 +43,8 @@ const NewWordForm = ({createNewWordForm}) =>{
           onChange={handleChange}
         />
       </div>
-      <button className="submitButton" type="submit" value="Submit">Submit</button>
+      <MdSend className="sendButton" />
+      {/* <button className="submitButton" type="submit" value="Submit">Submit</button> */}
     </form>
   );
 };

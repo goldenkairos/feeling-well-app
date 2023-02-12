@@ -1,23 +1,21 @@
 .About {
     font-family: Helvetica, sans-serif;
     margin-top: -5vh;
-    /* background-color: linear-gradient(#ffffff,#fff7f2, 
-    #ffe0ce, #d9c2c8, #c6bedf,#bbbee5, 
-    #bcc3ff,#b4c5ff,#a5c2ff,#94befc,#6f9de6,#598ad9,#598ad9); */
+
 }
 .firstIntro  {
     background-image: linear-gradient(#ffffff,#fff7f2, 
     #ffe0ce, #d9c2c8, #c6bedf);
-    height: 600px;
+    height: 500px;
     display: block;
 }
 
 .firstHeader{
     padding-top: 150px;
-    font-size: 50px;
+    font-size: 40px;
     display: flex;
     font-weight: bold;
-    margin-left:100px;
+    margin-left:70px;
     
 }
 .secondIntro  {
@@ -30,31 +28,31 @@
 
 .secondHeader, .thirdHeader, .fourthHeader {
     padding-top: 300px 0;
-    font-size: 50px;
+    font-size: 40px;
     display: flex;
     /* vertical-align: middle; */
     font-weight: bold;
-    margin-left:100px;
-    margin-right:100px;
+    margin-left:70px;
+    margin-right:70px;
     
 }
 
 .thirdIntro  {
     background-image: linear-gradient(#a5c2ff,#94befc,#6f9de6,#598ad9,#2561c2);
-    height: 600px;
+    height: 500px;
     display: block;
 }
 
 .fourthIntro  {
     background-image: linear-gradient(#6f9de6,#598ad9,#2561c2);
-    height: 600px;
+    height: 500px;
     display: block;
 }
 
 .firstParagraph,.secondParagraph,.thirdParagraph,.fourthParagraph {
 font-size: 1vw;
-margin-left:100px;
-margin-right: 100px;
+margin-left:70px;
+margin-right: 70px;
 }
 
 

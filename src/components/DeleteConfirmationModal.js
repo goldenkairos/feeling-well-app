@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
-import { BsToggle2Off, BsToggle2On } from "react-icons/bs/index.esm.js";
+// import { BsToggle2Off, BsToggle2On } from "react-icons/bs/index.esm.js";
+import { RiDeleteBin6Fill } from "react-icons/ri/index.esm.js";
 import "./Dashboard.css";
 // import Button from "react-bootstrap/Button";
 
@@ -13,30 +14,33 @@ function DeleteConfirmationModal({ deleteAllWords }) {
     deleteAllWords();
     handleClose();
   };
-  const [isDeleteButtonVisible, setDeleteButtonVisible] = useState(false);
+  // const [isDeleteButtonVisible, setDeleteButtonVisible] = useState(false);
 
-  const toogleDeleteButton = () => {
-    setDeleteButtonVisible(!isDeleteButtonVisible);
-  };
+  // const toogleDeleteButton = () => {
+  //   setDeleteButtonVisible(!isDeleteButtonVisible);
+  // };
 
   return (
     <div className='submitField deleteAll' >
       <label>Clear your mood board</label>
-      <span className="toggle-button" onClick={toogleDeleteButton}>
+      {/* <span className="toggle-button" onClick={toogleDeleteButton}>
         {isDeleteButtonVisible ? <BsToggle2On /> : <BsToggle2Off />}
       </span>
-      {isDeleteButtonVisible ? (
-        <button
+      {isDeleteButtonVisible ? ( */}
+        <RiDeleteBin6Fill className="sendButton trash" onClick={handleShow} />
+        {/* onClick={handleShow} */}
+        {/* <button
           className="DeleteAllButton"
           type="submit"
           value="Submit"
           onClick={handleShow}
         >
           Delete All
-        </button>
-      ) : (
+        </button> */}
+        {/* </RiDeleteBin6Fill> */}
+      {/* ) : (
         ""
-      )}
+      )} */}
 
       <Modal show={showModal} onHide={handleClose}>
         <Modal.Header closeButton>
