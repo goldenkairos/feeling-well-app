@@ -65,10 +65,10 @@ margin-right: 70px;
     align-items: center;
     align-content: center;
     display: flex;
-    padding-top:16px;
+    padding-top:10px;
     padding-left: 10px;
     padding-right:10px;
-    padding-bottom: 0px;
+    padding-bottom: 5px;
     font-family: Helvetica ;
     font-size:1vw;
 }
@@ -79,11 +79,11 @@ margin-right: 70px;
 	left: 50%;
 	width: 0;
 	height: 0;
-	border: 44px solid transparent;
+	border: 30px solid transparent;
 	border-top-color:#ffe868;
 	border-bottom: 0;
 	border-right: 0;
-	margin-left: -22px;
-	margin-bottom: -50px; 
+	margin-left: -10px;
+	margin-bottom: -5vh; 
     }
 

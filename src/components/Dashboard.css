@@ -186,3 +186,7 @@ font-size: 1.2vw;
 .trash:hover{
   color:red
 }
+
+.wheel {
+  padding-top: 5px;
+}
