@@ -1,4 +1,5 @@
 import React from "react";
+import "./wordCloud.css";
 
 import ReactWordcloud from "react-wordcloud";
 
@@ -21,11 +22,11 @@ function WordCloud({ wordsFreq }) {
         rotations: [0, 90],
         rotationAngles: [-90, 0, 90],
         fontFamily: "Helvetica",
-        minSize:[100, 400],
-        size:[100,100],
+        // minSize:[100, 400],
+        // size:[100,100],
         
       }}
-      style={{ opacity: 0.9, height: "75%", width: "75%", fontSizes:"1vw" }}
+      style={{ opacity: 0.9, height: "75%", width: "75%"}}
     />
   );
 }

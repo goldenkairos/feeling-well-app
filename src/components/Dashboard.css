@@ -1,192 +1,198 @@
+@media screen and (min-width: 1200px) {
+  .visualization {
+  display: grid;
+  grid-template-columns: repeat(auto-fill);
+  grid-template-rows: 1fr 55%;
+  margin-left:100px;
+  margin-right: 100px;
+  margin-top: 30px;
+  }
 
-.visualization {
-display: grid;
-grid-template-columns: repeat(auto-fill);
-grid-template-rows: 1fr 55%;
-margin-left:100px;
-margin-right: 100px;
-margin-top: 30px;
+  .wordCloud {
+    grid-column: 2/3;
+    grid-row:1/2;
+    
+  }
+
+  .actualWordCloud{
+    padding-top: 15%;
+  }
+
+  .feelWheel {
+
+    grid-column: 1/2;
+    grid-row:1/2;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .forms {
+    grid-row:2/3;
+    grid-column:1/2;
+    font-size: 1.2vw;
+    font-family: Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column; 
+    height: 100px;
+    margin-left: 20px;
+  }
+
+
+  .BarChart {
+    grid-row:2/3;
+    grid-column: 2/3;
+  }
+
+
+  .feeling {
+    border: #616263;
+    border-radius: 5px;
+    font-size: .8rem;
+    font:bold;
+    border-style:solid;  
+    background-color: #a7eff3;
+    opacity: .8;
+    margin: 5px;
+    width: 70px;
+    align-content: center;
+
+  }
+
+  .feeling:hover {
+    background-color: aqua;
+    color: black;
+  }
+
+
+  /* Updating the input field  */
+  .inputfield {
+    border:none; /*removing the button box */
+    border-bottom: 2px solid rgb(205, 199, 199);
+    outline:none; /*removing the outline box */
+    /* margin-right: 10px; */
+    opacity: .9;
+  }
+  label {
+    font-family: Helvetica, sans-serif;
+    color: #333333;
+    font-size: 1.2vw;
+  }
+
+  .deleteButton:hover{
+    background-color: rgb(249, 243, 243);
+    border-radius: 5px;
+    color: rgb(213, 0, 0);
+    opacity: .8;
+    font-weight: 600;
+  }
+
+  /* keeping the form and submit button inline */
+  .submitField {
+    display: inline-block;
+    padding-bottom:10px;
+  }
+
+
+  /* CSS */
+  .submitButton, .deleteButton {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
+    box-sizing: border-box;
+    color: #121212;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-family: Inter,sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s,-webkit-box-shadow .2s;
+    white-space: nowrap;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+
+  .submitButton:hover {
+    box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+    background-color: #eceff2;
+  }
+
+  .deleteButton:hover {
+    box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
+    background-color: #eceff2;
+  }
+
+  .DeleteAllButton {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: transparent 0 0 0 3px,rgba(237, 11, 11, 0.1) 0 6px 20px;
+    box-sizing: border-box;
+    color: #f80404;
+    cursor: pointer;
+    display: inline-flex;
+    flex: 1 1 auto;
+    font-family: Inter,sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    padding: 1rem 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    transition: box-shadow .2s,-webkit-box-shadow .2s;
+    white-space: nowrap;
+    border: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    
+  }
+
+  .deleteAll {
+    margin-top:15px;
+  }
+
+  .toggle-button {
+    padding:20px;
+    font-size: 1.5vw !important;
+  }
+
+
+  .sendButton:hover {
+  color:gray;
+  font-size: 1.2vw;
+  }
+
+  .sendButton {
+    font-size: 1.2vw;
+    margin-left: 10px;
+    /* padding-left: 10px; */
+    /* padding-left: 2vw; */
+  }
+
+  .trash:hover{
+    color:red
+  }
+
+  .wheel {
+    padding-top: 5px;
+  }
+
 }
 
-.wordCloud {
-  grid-column: 2/3;
-  grid-row:1/2;
+@media screen and (max-width: 1200px) {
   
-}
-
-.actualWordCloud{
-  padding-top: 15%;
-}
-
-.feelWheel {
-
-  grid-column: 1/2;
-  grid-row:1/2;
-  display: flex;
-  flex-direction: column;
-}
-
-.forms {
-  grid-row:2/3;
-  grid-column:1/2;
-  font-size: 1.2vw;
-  font-family: Helvetica, sans-serif;
-  display: flex;
-  flex-direction: column; 
-  height: 100px;
-  margin-left: 20px;
-}
-
-
-.BarChart {
-  grid-row:2/3;
-  grid-column: 2/3;
-}
-
-
-.feeling {
-  border: #616263;
-  border-radius: 5px;
-  font-size: .8rem;
-  font:bold;
-  border-style:solid;  
-  background-color: #a7eff3;
-  opacity: .8;
-  margin: 5px;
-  width: 70px;
-  align-content: center;
-
-}
-
-.feeling:hover {
-  background-color: aqua;
-  color: black;
-}
-
-
-/* Updating the input field  */
-.inputfield {
-  border:none; /*removing the button box */
-  border-bottom: 2px solid rgb(205, 199, 199);
-  outline:none; /*removing the outline box */
-  /* margin-right: 10px; */
-  opacity: .9;
-}
-label {
-  font-family: Helvetica, sans-serif;
-  color: #333333;
-  font-size: 1.2vw;
-}
-
-.deleteButton:hover{
-  background-color: rgb(249, 243, 243);
-  border-radius: 5px;
-  color: rgb(213, 0, 0);
-  opacity: .8;
-  font-weight: 600;
-}
-
-/* keeping the form and submit button inline */
-.submitField {
-  display: inline-block;
-  padding-bottom:10px;
-}
-
-
-/* CSS */
-.submitButton, .deleteButton {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
-  box-sizing: border-box;
-  color: #121212;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 1 1 auto;
-  font-family: Inter,sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 1rem 1.2rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .2s,-webkit-box-shadow .2s;
-  white-space: nowrap;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.submitButton:hover {
-  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-  background-color: #eceff2;
-}
-
-.deleteButton:hover {
-  box-shadow: #121212 0 0 0 3px, transparent 0 0 0 0;
-  background-color: #eceff2;
-}
-
-.DeleteAllButton {
-  align-items: center;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: transparent 0 0 0 3px,rgba(237, 11, 11, 0.1) 0 6px 20px;
-  box-sizing: border-box;
-  color: #f80404;
-  cursor: pointer;
-  display: inline-flex;
-  flex: 1 1 auto;
-  font-family: Inter,sans-serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  justify-content: center;
-  line-height: 1;
-  margin: 0;
-  outline: none;
-  padding: 1rem 1.2rem;
-  text-align: center;
-  text-decoration: none;
-  transition: box-shadow .2s,-webkit-box-shadow .2s;
-  white-space: nowrap;
-  border: 0;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  
-}
-
-.deleteAll {
-  margin-top:15px;
-}
-
-.toggle-button {
-  padding:20px;
-  font-size: 1.5vw !important;
-}
-
-
-.sendButton:hover {
-color:gray;
-font-size: 1.2vw;
-}
-
-.sendButton {
-  font-size: 1.2vw;
-  margin-left: 10px;
-  /* padding-left: 10px; */
-  /* padding-left: 2vw; */
-}
-
-.trash:hover{
-  color:red
-}
-
-.wheel {
-  padding-top: 5px;
 }
