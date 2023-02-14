@@ -14,7 +14,7 @@ Create a folder call "Feeling-well".
 Inside the folder, we will set up back-end and front-end
 
 # Back-end layer Setup:
-1. In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
+In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
 
 $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
 
@@ -23,7 +23,7 @@ $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
 In project directory in the terminal, enter the below syntax to launch project in VScode
 $ code .
 
-2. Managing Dependencies
+1. Managing Dependencies
 Create a virtual environment:
 
 ```bash
@@ -38,7 +38,7 @@ Install dependencies (we've already gathered them all into a `requirements.txt` 
 (venv) $ pip install -r requirements.txt
 ```
 
-3. Setting Up The Database
+2. Setting Up The Database
 
 #Create a database named `feeling_well_development`.
 ```bash
@@ -62,14 +62,14 @@ FLASK_ENV=development
 SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/feeling_well_development
 ```
 
-4. Initiate Database
+3. Initiate Database
 ```bash
 $ flask db init
 $ flask db migrate
 $ flask db upgrade
 ```
 
-5. Making updates in Database:
+4. Making updates in Database:
 
     If update the model in the database, make sure (the member who makes the change) to run the following:
 ```bash
@@ -86,7 +86,7 @@ $ git pull
 $ flask db upgrade
 ```
 
-6. If files are unable to take the updates, delete the migration when there is migration issue:
+5. If files are unable to take the updates, delete the migration when there is migration issue:
     Delete the migration table in terminal
 ```bash
 $ psql -U postgres
@@ -110,10 +110,6 @@ e. Make git commit
 
 # Front-end layer Setup:
 
-<details>
-
-<summary>Click here to expand front-end layer setup steps.</summary>
-
 # Clone
 
 Clone the forked repo in the main feeling_well folder. Do _not_ clone this inside of the back-end project folder, because that will cause issues.
@@ -121,6 +117,10 @@ Clone the forked repo in the main feeling_well folder. Do _not_ clone this insid
 ```bash
 $ git clone https://github.com/goldenkairos/feeling-well-app.git
 ```
+
+<details>
+
+<summary>Click here to expand front-end layer setup steps.</summary>
 
 # Manage Dependencies
 ```bash
@@ -160,3 +160,8 @@ REACT_APP_FIREBASE_MESSAGING_SENDER_ID = `messagingSenderId`
 REACT_APP_FIREBASE_APP_ID = `appId`
 ```
 #If Receive firebase invalid api auth error message and project isnt launched, drag the `.env.local` to the same level as the `.env` file.
+
+</details>
+
+## To initiate front-end server:
+# Run `$ yarn start`
