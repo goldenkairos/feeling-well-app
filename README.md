@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# About This Project
+This is a full stack web application designed to help anyone who wants to keep track of their emotions and feelings, whether they're looking to improve their mental health or simply want to reflect on their experiences. It is an excellent tool for people who want to better understand themselves and their emotions, and it's also great for people who want to monitor their progress over time.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Tech stacks:
+1. We created the Feeling Well web application using a combination of `Flask`, `SQLAlchemy`, and `PostgreSQL` for the backend and database, and `React JS Vanilla`,  `React D3`, `firebase authentication` for the front-end.
+    
+2. We utilized Flask and SQLAlchemy to create the backend and handle database operations, such as creating, reading, deleting records. We also used PostgreSQL to store and manage the data entered by users.
+   
+3. For the front-end, we used `React JS Vanilla` to create the user interface and provide an interactive experience for users. We used `React D3` to create the colorful Feeling Wheel, from which allows users to select words that represent their emotions and display the frequencies of each word in a word cloud. We also created user authentication which allows the user to sign up and log in to their private account to create their own personalized feeling wordcloud.
 
-## Available Scripts
+# One-time Project Setup
+Create a folder call "Feeling-well". 
 
-In the project directory, you can run:
+Inside the folder, we will set up back-end and front-end
 
-### `npm start`
+##Back-end layer Setup:
+1. In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+$ git clone https://github.com/goldenkairos/back-end-feeling-well.git
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<details>
+<summary>Only do this if back-end heroku deployment is no longer available</summary>
+In project directory in the terminal, enter the below syntax to launch project in VScode
+$ code .
 
-### `npm test`
+2. Managing Dependencies
+Create a virtual environment:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+$ python3 -m venv venv
+$ source venv/bin/activate
+(venv) $ # You're in activated virtual environment!
+```
 
-### `npm run build`
+Install dependencies (we've already gathered them all into a `requirements.txt` file):
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+(venv) $ pip install -r requirements.txt
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Setting Up The Database
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Create a database named `feeling_well_development`.
 
-### `npm run eject`
+## Creating a `.env` File
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Create a file named `.env`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Add this environment variable: `FLASK_ENV=development`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Also, add the environment variable `SQLALCHEMY_DATABASE_URI` to hold the path to your development database.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Your `.env` may look like this:
 
-## Learn More
+```
+FLASK_ENV=development
+SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/feeling_well_development
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. Initiate Database
+$ flask db init
+$ flask db migrate
+$ flask db upgrade
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. Making updates in Database:
 
-### Code Splitting
+a. If update the model in the database, make sure (the member who makes the change) to run the following:
+$ flask db migrate
+$ flask db upgrade
+$ git add .
+$ git commit -m"Update model"
+$ git push
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+b. If another team member makes update, and another user needs to pull the update:
+$ git pull
+$ flask db upgrade
 
-### Analyzing the Bundle Size
+6. If files are unable to take the updates, delete the migration when there is migration issue:
+a. Delete the migration table in terminal
+$ psql -U postgres
+$ DATABASE feeling_well_development;
+b. Re-create the database
+$ CREATE DATABASE feeling_well_development;
+c. Check on the database to confirm
+$ \l
+d. Repeat #4
+e. Make git commit
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+</details>
