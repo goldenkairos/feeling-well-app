@@ -13,7 +13,7 @@ Create a folder call "Feeling-well".
 
 Inside the folder, we will set up back-end and front-end
 
-##Back-end layer Setup:
+# Back-end layer Setup:
 1. In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
 
 $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
@@ -40,9 +40,14 @@ Install dependencies (we've already gathered them all into a `requirements.txt` 
 
 3. Setting Up The Database
 
-Create a database named `feeling_well_development`.
-
-## Creating a `.env` File
+#Create a database named `feeling_well_development`.
+```bash
+$ psql -U postgres
+$ CREATE DATABASE feeling_well_development;
+$\l #to check if the database was created
+$\q #to quit postgres
+```
+#Creating a `.env` File
 
 Create a file named `.env`.
 
@@ -66,7 +71,7 @@ $ flask db upgrade
 
 5. Making updates in Database:
 
-    a. If update the model in the database, make sure (the member who makes the change) to run the following:
+    If update the model in the database, make sure (the member who makes the change) to run the following:
 ```bash
 $ flask db migrate
 $ flask db upgrade
@@ -75,23 +80,23 @@ $ git commit -m"Update model"
 $ git push
 ```
 
-    b. If another team member makes update, and another user needs to pull the update:
+    If another team member makes update, and another user needs to pull the update:
 ```bash
 $ git pull
 $ flask db upgrade
 ```
 
-1. If files are unable to take the updates, delete the migration when there is migration issue:
-    a. Delete the migration table in terminal
+6. If files are unable to take the updates, delete the migration when there is migration issue:
+    Delete the migration table in terminal
 ```bash
 $ psql -U postgres
-$ DATABASE feeling_well_development;
+$ DROP DATABASE feeling_well_development;
 ```
-b. Re-create the database
+    Re-create the database
 ```bash
 $ CREATE DATABASE feeling_well_development;
 ```
-c. Check on the database to confirm
+    Check on the database to confirm
 ```bash
 $ \l
 ```
@@ -99,3 +104,59 @@ d. Repeat #4
 e. Make git commit
 
 </details>
+
+## To initiate back-end server:
+# Run `$ flask run` or `$ FLASK_ENV=development flask run`
+
+# Front-end layer Setup:
+
+<details>
+
+<summary>Click here to expand front-end layer setup steps.</summary>
+
+# Clone
+
+Clone the forked repo in the main feeling_well folder. Do _not_ clone this inside of the back-end project folder, because that will cause issues.
+
+```bash
+$ git clone https://github.com/goldenkairos/feeling-well-app.git
+```
+
+# Manage Dependencies
+```bash
+$ yarn install
+```
+
+## Creating a `.env` File
+
+Create a file named `.env`.
+
+The front-end layer needs to send API requests to the back-end layer. In order to handle this, the front-end layer repo **must** include a `.env` file with this line:
+
+```
+REACT_APP_BACKEND_URL=http://localhost:5000
+```
+
+## Create a firebase project for authentication
+https://firebase.google.com/
+
+1. Add project
+2. Enter project name => Create Project
+3. Build/Authentication feature => Get started
+4. Enable Email/Password in Sign-in method tab
+5. Go to project setting, click thje </> icon to add a web app
+6. Register app at "Add Firebase to your web app" window, enter app name "feeling-well". You should receive Firebase SDK keys
+7. In your front end project, same level as App.js, # Create a `.env.local` File
+
+Update the file and replace the value below with SDK keys provided by firebase
+
+```bash
+REACT_APP_FIREBASE_API_KEY = `apiKey`
+REACT_APP_FIREBASE_AUTH_DOMAIN = `authDomain`
+REACT_APP_FIREBASE_DATABASE_URL = `https://app-name.firebaseio.com`
+REACT_APP_FIREBASE_PROJECT_ID=`projectID`
+REACT_APP_FIREBASE_STORAGE_BUCKET = `storageBucket`
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID = `messagingSenderId`
+REACT_APP_FIREBASE_APP_ID = `appId`
+```
+#If Receive firebase invalid api auth error message and project isnt launched, drag the `.env.local` to the same level as the `.env` file.
