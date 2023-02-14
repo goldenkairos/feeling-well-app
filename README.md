@@ -9,9 +9,12 @@ Tech stacks:
 3. For the front-end, we used `React JS Vanilla` to create the user interface and provide an interactive experience for users. We used `React D3` to create the colorful Feeling Wheel, from which allows users to select words that represent their emotions and display the frequencies of each word in a word cloud. We also created user authentication which allows the user to sign up and log in to their private account to create their own personalized feeling wordcloud.
 
 # One-time Project Setup
-Create a folder call "Feeling-well". 
+Create a folder call "feeling-well-fullstack".
+$ mkdir feeling-well-fullstack
 
-Inside the folder, we will set up back-end and front-end
+Inside this folder, we will set up back-end and front-end files. 
+## _Make sure front end and back end folders are not nested inside each other_
+
 
 # Back-end layer Setup:
 
@@ -115,6 +118,7 @@ e. Make git commit
 ## Clone
 
 Clone the forked repo in the main feeling_well folder. Do _not_ clone this inside of the back-end project folder, because that will cause issues.
+
 
 ```bash
 $ git clone https://github.com/goldenkairos/feeling-well-app.git
