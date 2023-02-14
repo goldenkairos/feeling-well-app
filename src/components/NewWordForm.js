@@ -43,7 +43,7 @@ const NewWordForm = ({createNewWordForm}) =>{
           onChange={handleChange}
         />
       </div>
-      <MdSend className="sendButton" />
+      <MdSend className="sendButton" onClick={(e) => handleNewWordSubmit(e)}/>
       {/* <button className="submitButton" type="submit" value="Submit">Submit</button> */}
     </form>
   );

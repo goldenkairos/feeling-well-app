@@ -44,7 +44,7 @@ const RemoveWordForm = ({submitDeleteWord}) =>{
           onChange={handleChange}
         />
       </div>
-      <MdSend className="sendButton" />
+      <MdSend className="sendButton" onClick={(e) => handleDeletedWordSubmit(e)}/>
 
       {/* <button className="deleteButton">Delete</button> */}
     </form>
