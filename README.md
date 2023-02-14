@@ -13,7 +13,9 @@ Create a folder call "Feeling-well".
 
 Inside the folder, we will set up back-end and front-end
 
-# Back-end layer Setup:
+## Back-end layer Setup:
+
+## Clone
 In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
 
 $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
@@ -23,7 +25,7 @@ $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
 In project directory in the terminal, enter the below syntax to launch project in VScode
 $ code .
 
-1. Managing Dependencies
+## Managing Dependencies
 Create a virtual environment:
 
 ```bash
@@ -38,7 +40,7 @@ Install dependencies (we've already gathered them all into a `requirements.txt` 
 (venv) $ pip install -r requirements.txt
 ```
 
-2. Setting Up The Database
+## Setting Up The Database
 
 #Create a database named `feeling_well_development`.
 ```bash
@@ -62,14 +64,14 @@ FLASK_ENV=development
 SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/feeling_well_development
 ```
 
-3. Initiate Database
+## Initiate Database
 ```bash
 $ flask db init
 $ flask db migrate
 $ flask db upgrade
 ```
 
-4. Making updates in Database:
+## Making updates in Database:
 
     If update the model in the database, make sure (the member who makes the change) to run the following:
 ```bash
@@ -86,7 +88,7 @@ $ git pull
 $ flask db upgrade
 ```
 
-5. If files are unable to take the updates, delete the migration when there is migration issue:
+## If files are unable to take the updates, delete the migration when there is migration issue:
     Delete the migration table in terminal
 ```bash
 $ psql -U postgres
@@ -105,12 +107,12 @@ e. Make git commit
 
 </details>
 
-## To initiate back-end server:
-# Run `$ flask run` or `$ FLASK_ENV=development flask run`
+# To initiate back-end server:
+## Run `$ flask run` or `$ FLASK_ENV=development flask run`
 
 # Front-end layer Setup:
 
-# Clone
+## Clone
 
 Clone the forked repo in the main feeling_well folder. Do _not_ clone this inside of the back-end project folder, because that will cause issues.
 
@@ -122,7 +124,7 @@ $ git clone https://github.com/goldenkairos/feeling-well-app.git
 
 <summary>Click here to expand front-end layer setup steps.</summary>
 
-# Manage Dependencies
+## Manage Dependencies
 ```bash
 $ yarn install
 ```
@@ -163,5 +165,5 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 
 </details>
 
-## To initiate front-end server:
-# Run `$ yarn start`
+# To initiate front-end server:
+## Run `$ yarn start`
