@@ -58,31 +58,43 @@ SQLALCHEMY_DATABASE_URI=postgresql+psycopg2://postgres:postgres@localhost:5432/f
 ```
 
 4. Initiate Database
+```bash
 $ flask db init
 $ flask db migrate
 $ flask db upgrade
+```
 
 5. Making updates in Database:
 
-a. If update the model in the database, make sure (the member who makes the change) to run the following:
+    a. If update the model in the database, make sure (the member who makes the change) to run the following:
+```bash
 $ flask db migrate
 $ flask db upgrade
 $ git add .
 $ git commit -m"Update model"
 $ git push
+```
 
-b. If another team member makes update, and another user needs to pull the update:
+    b. If another team member makes update, and another user needs to pull the update:
+```bash
 $ git pull
 $ flask db upgrade
+```
 
-6. If files are unable to take the updates, delete the migration when there is migration issue:
-a. Delete the migration table in terminal
+1. If files are unable to take the updates, delete the migration when there is migration issue:
+    a. Delete the migration table in terminal
+```bash
 $ psql -U postgres
 $ DATABASE feeling_well_development;
+```
 b. Re-create the database
+```bash
 $ CREATE DATABASE feeling_well_development;
+```
 c. Check on the database to confirm
+```bash
 $ \l
+```
 d. Repeat #4
 e. Make git commit
 
