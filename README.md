@@ -13,7 +13,7 @@ Create a folder call "Feeling-well".
 
 Inside the folder, we will set up back-end and front-end
 
-## Back-end layer Setup:
+# Back-end layer Setup:
 
 ## Clone
 In terminal `git clone` the back-end project repo: https://github.com/goldenkairos/back-end-feeling-well.git
@@ -107,8 +107,8 @@ e. Make git commit
 
 </details>
 
-# To initiate back-end server:
-## Run `$ flask run` or `$ FLASK_ENV=development flask run`
+## To initiate back-end server:
+### Run `$ flask run` or `$ FLASK_ENV=development flask run`
 
 # Front-end layer Setup:
 
@@ -165,5 +165,5 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 
 </details>
 
-# To initiate front-end server:
-## Run `$ yarn start`
+## To initiate front-end server:
+### Run `$ yarn start`
