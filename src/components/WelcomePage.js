@@ -1,7 +1,7 @@
 // import React, { useState} from 'react'
 
 import { useAuth } from "../contexts/AuthContext.js";
-import { Link, useNavigate as useHistory } from "react-router-dom";
+// import { Link, useNavigate as useHistory } from "react-router-dom";
 
 import "./Dashboard.css";
 import NewWordForm from "./NewWordForm.js";
@@ -17,7 +17,7 @@ import Footer from "./Footer.js";
 import DeleteConfirmationModal from "./DeleteConfirmationModal.js";
 
 export default function WelcomePage() {
-  const [error, setError] = useState("");
+  // const [error, setError] = useState("");
   const { currentUser } = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
 

@@ -1,5 +1,5 @@
 import { useAuth } from "../contexts/AuthContext.js";
-import { useNavigate as useHistory } from "react-router-dom";
+// import { useNavigate as useHistory } from "react-router-dom";
 // import React from "react";
 // import "./src/App.css";
 
@@ -17,10 +17,10 @@ import BarChart from "./BarChart.js";
 import DeleteConfirmationModal from "./DeleteConfirmationModal.js";
 
 export default function Dashboard() {
-  const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  // const [error, setError] = useState("");
+  const { currentUser} = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
-  const history = useHistory();
+  // const history = useHistory();
 
   // console.log("CURRENT NAMEEEEEEEEEEEE");
   // console.log("HELLO HELLO HELLO", currentUser.displayName);
@@ -99,7 +99,7 @@ export default function Dashboard() {
       });
   };
 
-  useEffect(getWords, []);
+  useEffect(getWords, [currentUser]);
 
   return (
     <div>
