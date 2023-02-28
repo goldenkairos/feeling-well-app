@@ -171,3 +171,6 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 
 ## To initiate front-end server:
 ### Run `$ yarn start`
+
+# Credit
+D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
