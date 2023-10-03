@@ -1,4 +1,6 @@
 # About This Project
+See [Project Demo](https://youtu.be/vvlEZZYfe6o?si=5ZmutYpsmsJZrZsu)
+
 This is a full stack web application designed to help anyone who wants to keep track of their emotions and feelings, whether they're looking to improve their mental health or simply want to reflect on their experiences. It is an excellent tool for people who want to better understand themselves and their emotions, and it's also great for people who want to monitor their progress over time.
 
 Tech stacks:
