@@ -8,6 +8,7 @@ Tech stacks:
    
 3. For the front-end, we used `React JS Vanilla` to create the user interface and provide an interactive experience for users. We used `React D3` to create the colorful Feeling Wheel, from which allows users to select words that represent their emotions and display the frequencies of each word in a word cloud. We also created user authentication which allows the user to sign up and log in to their private account to create their own personalized feeling wordcloud.
 
+
 # One-time Project Setup
 Create a folder call "feeling-well-fullstack".
 $ mkdir feeling-well-fullstack
@@ -171,3 +172,6 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 
 ## To initiate front-end server:
 ### Run `$ yarn start`
+
+# Credit
+D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
