@@ -1,4 +1,6 @@
 # About This Project
+See [Project Demo](https://youtu.be/vvlEZZYfe6o?si=5ZmutYpsmsJZrZsu)
+
 This is a full stack web application designed to help anyone who wants to keep track of their emotions and feelings, whether they're looking to improve their mental health or simply want to reflect on their experiences. It is an excellent tool for people who want to better understand themselves and their emotions, and it's also great for people who want to monitor their progress over time.
 
 Tech stacks:
@@ -174,4 +176,8 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 ### Run `$ yarn start`
 
 # Credit
+<<<<<<< HEAD
 D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
+=======
+D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
+>>>>>>> 5a27f16c8593b2ae6907919ee56cf59945a7540b

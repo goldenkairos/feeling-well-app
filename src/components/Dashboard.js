@@ -1,7 +1,4 @@
 import { useAuth } from "../contexts/AuthContext.js";
-// import { useNavigate as useHistory } from "react-router-dom";
-// import React from "react";
-// import "./src/App.css";
 
 // import NewWordForm from "./components/NewWordForm.js";
 import "./Dashboard.css";
@@ -20,10 +17,6 @@ export default function Dashboard() {
   // const [error, setError] = useState("");
   const { currentUser} = useAuth();
   const [wordsFreq, setWordsFreq] = useState({});
-  // const history = useHistory();
-
-  // console.log("CURRENT NAMEEEEEEEEEEEE");
-  // console.log("HELLO HELLO HELLO", currentUser.displayName);
 
   const getWords = () => {
     let getWordsURL = null;
