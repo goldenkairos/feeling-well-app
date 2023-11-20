@@ -27,7 +27,7 @@ In terminal `git clone` the back-end project repo: https://github.com/goldenkair
 $ git clone https://github.com/goldenkairos/back-end-feeling-well.git
 
 <details>
-<summary>Only do this if back-end heroku deployment is no longer available</summary>
+<summary>Note: Follow these instructions if back-end heroku deployment is no longer available</summary>
 In project directory in the terminal, enter the below syntax to launch project in VScode
 $ code .
 
@@ -116,6 +116,8 @@ e. Make git commit
 ## To initiate back-end server:
 ### Run `$ flask run` or `$ FLASK_ENV=development flask run`
 
+## Deployment of back end again
+
 # Front-end layer Setup:
 
 ## Clone
@@ -144,6 +146,24 @@ The front-end layer needs to send API requests to the back-end layer. In order t
 
 ```
 REACT_APP_BACKEND_URL=http://localhost:5000
+```
+# Deploy new changes to firebase:
+Any new changes being push to git should be rebuild and redeploy in firebase
+
+```bash
+$ git add .
+$ git commit -m"<new change message>"
+$ git push
+$ yarn run build
+$ firebase deploy
+```
+If the changes did not work, logout and login of firebase again in terminal, build and deploy again
+
+```bash
+$ firebase logout
+$ firebase login
+$ yarn run build
+$ firebase deploy
 ```
 
 ## Create a firebase project for authentication
@@ -175,9 +195,5 @@ REACT_APP_FIREBASE_APP_ID = `appId`
 ## To initiate front-end server:
 ### Run `$ yarn start`
 
-# Credit
-<<<<<<< HEAD
+### Credit
 D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
-=======
-D3 Feeling Wheel source code: https://github.com/epleaner/emotions-wheel
->>>>>>> 5a27f16c8593b2ae6907919ee56cf59945a7540b
